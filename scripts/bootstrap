@@ -1,0 +1,57 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+
+def with_env_vars(env_vars)
+  old_values = {}
+  env_vars.each do |key, new_value|
+    old_values[key] = ENV[key]
+    ENV[key] = new_value
+  end
+
+  yield
+
+  env_vars.each_key do |key|
+    ENV[key] = old_values[key]
+  end
+end
+
+def run(cmd)
+  puts "Executing #{cmd}"
+  system(cmd)
+end
+
+def describe(header)
+  width = 50
+  puts '#' * width
+  puts header.center(width)
+  puts '#' * width
+end
+
+describe('🎯 Installing bundle')
+run 'bundle install'
+
+def db_config
+  @db_config_file ||= File.join(File.dirname(__FILE__), '..', 'config', 'database.yml')
+  @dbconfig ||= YAML.load(File.read(@db_config_file))
+end
+
+%w(development test).each do |environment|
+  next unless db_config[environment]
+  if db_config[environment]['username']
+    describe("🎯 Creating superuser: #{db_config[environment]['username']}")
+    run "createuser -s -D -R -e #{db_config[environment]['username']}"
+  end
+  if db_config[environment]['database']
+    describe("🎯 Creating database: #{db_config[environment]['database']}")
+    run "createdb #{db_config[environment]['database']}"
+  end
+end
+
+describe('🎯 Loading scheme')
+run 'bundle exec rake db:migrate'
+
+puts '-' * 50
+puts "So that's that."
+
+puts '🎉 Done. Goodbye.'
