@@ -16,8 +16,6 @@ gem "puma", "~> 3.4"
 # [sass-rails](https://github.com/rails/sass-rails)
 gem "sass-rails", "~> 5.0"
 
-# gem 'uglifier', '>= 1.3.0'
-
 # Uglifier minifies JavaScript files by wrapping UglifyJS to be accessible in
 # [uglifier](http://github.com/lautis/uglifier)
 gem "uglifier", "~> 3.0.0"
@@ -45,6 +43,10 @@ gem "dotenv-rails", "~> 2.1"
 # The most popular HTML, CSS, and JavaScript framework for developing responsi
 # [bootstrap](https://github.com/twbs/bootstrap-rubygem)
 gem "bootstrap", "~> 4.0.0.alpha3"
+
+# Haml-rails provides Haml generators for Rails 4. It also enables Haml as the
+# [haml-rails](http://github.com/indirect/haml-rails)
+gem "haml-rails", "~> 0.9"
 
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
