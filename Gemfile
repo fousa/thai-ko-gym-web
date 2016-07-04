@@ -70,6 +70,12 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0"
 end
 
+group :production do
+  # Skylight is a smart profiler for Rails apps
+  # [skylight](http://www.skylight.io)
+  gem "skylight", "~> 0.10"
+end
+
 group :test do
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)
