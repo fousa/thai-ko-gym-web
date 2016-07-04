@@ -4,6 +4,10 @@ source 'https://rubygems.org'
 # [rails](http://www.rubyonrails.org)
 gem "rails", "~> 5.0"
 
+# Pg is the Ruby interface to the {PostgreSQL RDBMS}[http://www.postgresql.org
+# [pg](https://bitbucket.org/ged/ruby-pg)
+gem "pg", "~> 0.18"
+
 # Puma is a simple, fast, threaded, and highly concurrent HTTP 1.1 server for
 # [puma](http://puma.io)
 gem "puma", "~> 3.4"
