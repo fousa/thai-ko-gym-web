@@ -49,6 +49,14 @@ group :development, :test do
 end
 
 group :development do
+  # Quiet Assets turns off Rails asset pipeline log.
+  # [quiet_assets](http://github.com/evrone/quiet_assets)
+  gem "quiet_assets", "~> 1.1"
+
+  # Provides a better error page for Rails and other Rack apps. Includes source
+  # [better_errors](https://github.com/charliesome/better_errors)
+  gem "better_errors", "~> 2.1"
+
   # A debugging tool for your Ruby on Rails applications.
   # [web-console](https://github.com/rails/web-console)
   gem "web-console", "~> 3.3"
@@ -64,6 +72,36 @@ group :development do
   # Makes spring watch files using the listen gem.
   # [spring-watcher-listen](https://github.com/jonleighton/spring-watcher-listen)
   gem "spring-watcher-listen", "~> 2.0"
+end
+
+group :test do
+  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
+  # [faker](https://github.com/stympy/faker)
+  gem "faker", "~> 1.6"
+
+  # rspec-rails is a testing framework for Rails 3.x and 4.x.
+  # [rspec-rails](https://github.com/rspec/rspec-rails)
+  gem "rspec-rails", "~> 3.5"
+
+  # factory_girl_rails provides integration between factory_girl and rails 3
+  # [factory_girl_rails](http://github.com/thoughtbot/factory_girl_rails)
+  gem "factory_girl_rails", "~> 4.7"
+
+  # Guard::RSpec automatically run your specs (much like autotest).
+  # [guard-rspec](https://github.com/guard/guard-rspec)
+  gem "guard-rspec", "~> 4.7"
+
+  # Making tests easy on the fingers and eyes
+  # [shoulda-matchers](http://thoughtbot.com/community/)
+  gem "shoulda-matchers", "~> 3.1"
+
+  # Strategies for cleaning databases. Can be used to ensure a clean state for t
+  # [database_cleaner](http://github.com/DatabaseCleaner/database_cleaner)
+  gem "database_cleaner", "~> 1.5"
+
+  # Guard::Rubocop automatically checks Ruby code style with RuboCop when files
+  # [guard-rubocop](https://github.com/yujinakayama/guard-rubocop)
+  gem "guard-rubocop", "~> 1.2"
 end
 
 # TZInfo::Data contains data from the IANA Time Zone database packaged as Ruby
