@@ -42,6 +42,10 @@ gem "jbuilder", "~> 2.5"
 # [dotenv-rails](https://github.com/bkeepers/dotenv)
 gem "dotenv-rails", "~> 2.1"
 
+# The most popular HTML, CSS, and JavaScript framework for developing responsi
+# [bootstrap](https://github.com/twbs/bootstrap-rubygem)
+gem "bootstrap", "~> 4.0.0.alpha3"
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
