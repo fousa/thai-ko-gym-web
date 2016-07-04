@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 
-
 require 'yaml'
 
 def with_env_vars(env_vars)

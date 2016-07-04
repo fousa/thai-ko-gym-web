@@ -49,10 +49,6 @@ group :development, :test do
 end
 
 group :development do
-  # Quiet Assets turns off Rails asset pipeline log.
-  # [quiet_assets](http://github.com/evrone/quiet_assets)
-  gem "quiet_assets", "~> 1.1"
-
   # Provides a better error page for Rails and other Rack apps. Includes source
   # [better_errors](https://github.com/charliesome/better_errors)
   gem "better_errors", "~> 2.1"
