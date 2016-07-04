@@ -1,0 +1,20 @@
+!!!
+%html
+  %head
+    %title Thai Ko Gym
+
+    %meta{ charset: "utf-8" }
+    %meta{ content: "ie=edge", "http-equiv" => "x-ua-compatible"}
+    %meta{ content: "width=device-width, initial-scale=1, shrink-to-fit=no", name: "viewport"}
+    %meta{ content: "The web application for Thai Ko Gym.", name: "description"}
+    %meta{ content: "Jelle Vandebeeck", name: "author"}
+
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+
+  %body
+    .container
+      = render partial: 'layouts/navigation'
+      .inner-container= yield
