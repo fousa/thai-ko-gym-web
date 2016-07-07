@@ -1,24 +1,25 @@
 !!!
-%html
+/[if IE 8] <html lang="en" class="ie8">
+/[if IE 9] <html lang="en" class="ie9">
+/ [if !IE]><!
+%html{:lang => "en"}
+  / <![endif]
   %head
+    %meta{ charset: "utf-8" }
+
     %title Thai Ko Gym
 
-    %meta{ charset: "utf-8" }
     %meta{ content: "ie=edge", "http-equiv" => "x-ua-compatible"}
-    %meta{ content: "width=device-width, initial-scale=1, shrink-to-fit=no", name: "viewport"}
+    %meta{ content: "width=device-width, initial-scale=1", name: "viewport"}
     %meta{ content: "The web application for Thai Ko Gym.", name: "description"}
     %meta{ content: "Jelle Vandebeeck", name: "author"}
 
     = csrf_meta_tags
 
+    %link{ href: "http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all", rel: "stylesheet", type: "text/css" }
+
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
-  %body
-    .container
-      = render partial: 'layouts/navigation'
-
-      .notice= notice
-      .alert= alert
-
-      .inner-container= yield
+  %body.page-container-bg-solid
+    = render partial: 'layouts/navigation'

@@ -1,24 +1,11 @@
-// The Twitter Bootstrap styling.
-@import "bootstrap";
+@import 'font-awesome';
+@import 'simple-line-icons';
+@import 'bootstrap';
+@import 'bootstrap-switch';
 
-////
-//// NAVIGATION
-////
+@import 'components-rounded';
+@import 'plugins';
 
-.navbar {
-  margin: 20px;
-  border-radius: 0;
-}
-
-.bg-faded {
-  background-color: white;
-  border-bottom: 1px solid #333333;
-}
-
-////
-//// CONTAINER
-////
-
-.inner-container {
-  padding: 0 20px 20px 20px;
-}
+@import 'layout';
+@import 'default';
+@import 'custom';

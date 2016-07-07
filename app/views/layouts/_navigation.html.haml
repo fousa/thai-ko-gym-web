@@ -1,5 +1,13 @@
-%nav.navbar.navbar-light.navbar-static-top.bg-faded
-  .container
-    = link_to 'Thai Ko Gym', root_path, class: 'navbar-brand'
-    .pull-right
-      = link_to 'Logout', destroy_user_session_path, method: :delete
+.page-header
+  .page-header-top
+    .container
+      .page-logo
+        %a{ href: "index.html" }
+          %img.logo-default{:alt => "logo", :src => image_path('menu-logo.png') }
+
+  .page-header-menu
+    .container
+      .hor-menu
+        %ul.nav.navbar-nav
+          %li.active= link_to 'Leden', root_path
+          %li= link_to 'Aanwezigheden', root_path
