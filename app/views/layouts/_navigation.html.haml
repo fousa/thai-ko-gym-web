@@ -5,6 +5,22 @@
         %a{ href: "index.html" }
           %img.logo-default{:alt => "logo", :src => image_path('menu-logo.png') }
 
+      .top-menu
+        %ul.nav.navbar-nav.pull-right
+          %li.dropdown.dropdown-user.dropdown-dark
+            %a.dropdown-toggle{ "data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "javascript:;" }
+              %img.img-circle{ src: image_path('avatar.jpg') }
+              %span.username.username-hide-mobile Bavo
+            %ul.dropdown-menu.dropdown-menu-default
+              %li
+                %a{:href => "page_user_profile_1.html"}
+                  %i.icon-user
+                  My Profile
+              %li
+                %a{:href => "page_user_login_1.html"}
+                  %i.icon-key
+                  Log Out
+
   .page-header-menu
     .container
       .hor-menu
