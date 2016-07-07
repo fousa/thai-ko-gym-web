@@ -48,6 +48,10 @@ gem "haml-rails", "~> 0.9"
 # [devise](https://github.com/plataformatec/devise)
 gem "devise", "~> 4.2.0"
 
+# Forms made easy!
+# [simple_form](https://github.com/plataformatec/simple_form)
+gem "simple_form", "~> 3.2.1"
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
