@@ -385,7 +385,7 @@ Page Header
       margin: 23px 3px 0 13px;
       width: 40px;
       height: 30px;
-      background: url(../img/menu-toggler.png) center center;
+      background: asset-url('menu-toggler.png') center center;
       background-repeat: no-repeat;
       opacity: 0.7 ;
       filter: alpha(opacity=70) ; }
@@ -772,7 +772,7 @@ Page Header
       .page-header .page-header-top .top-menu .username-hide-mobile {
         display: none; } }
 
-/***  
+/***
 Pace - Page Progress
 ***/
 .pace .pace-progress {
@@ -1381,8 +1381,8 @@ Theme Panel
       .page-quick-sidebar-wrapper .page-quick-sidebar .page-quick-sidebar-settings .page-quick-sidebar-settings-list .list-items li select.form-control {
         padding: 4px 0px !important; }
 
-/***  
-Page Loading      
+/***
+Page Loading
 ***/
 .page-on-load {
   background: #fefefe; }
