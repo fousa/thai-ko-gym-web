@@ -1,4 +1,5 @@
 //= require jquery
+//= require jquery_ujs
 //= require bootstrap
 //= require js.cookie.min
 //= require bootstrap-hover-dropdown
