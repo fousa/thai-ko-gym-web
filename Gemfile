@@ -48,6 +48,10 @@ gem "bootstrap", "~> 4.0.0.alpha3"
 # [haml-rails](http://github.com/indirect/haml-rails)
 gem "haml-rails", "~> 0.9"
 
+# Flexible authentication solution for Rails with Warden
+# [devise](https://github.com/plataformatec/devise)
+gem "devise", "~> 4.2.0"
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
@@ -76,7 +80,7 @@ group :development do
   gem "spring-watcher-listen", "~> 2.0"
 end
 
-group :production do
+group :production, :staging do
   # Skylight is a smart profiler for Rails apps
   # [skylight](http://www.skylight.io)
   gem "skylight", "~> 0.10"

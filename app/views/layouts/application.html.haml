@@ -17,4 +17,8 @@
   %body
     .container
       = render partial: 'layouts/navigation'
+
+      .notice= notice
+      .alert= alert
+
       .inner-container= yield

@@ -1,3 +1,5 @@
 %nav.navbar.navbar-light.navbar-static-top.bg-faded
   .container
     = link_to 'Thai Ko Gym', root_path, class: 'navbar-brand'
+    .pull-right
+      = link_to 'Logout', destroy_user_session_path, method: :delete
