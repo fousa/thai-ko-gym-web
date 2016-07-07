@@ -1,8 +1,21 @@
 # Use this setup block to configure all options available in SimpleForm.
 SimpleForm.setup do |config|
   config.error_notification_class = 'alert alert-danger'
-  config.button_class = 'btn btn-default'
+  config.button_class = 'btn uppercase'
   config.boolean_label_class = nil
+
+  config.wrappers :login_form, tag: 'div', class: 'form-group' do |b|
+    b.use :html5
+    b.use :placeholder
+    b.optional :maxlength
+    b.optional :pattern
+    b.optional :min_max
+    b.optional :readonly
+
+    b.use :label, class: 'control-label visible-ie8 visible-ie9'
+
+    b.use :input, class: 'form-control form-control-solid placeholder-no-fix'
+  end
 
   config.wrappers :vertical_form, tag: 'div', class: 'form-group', error_class: 'has-error' do |b|
     b.use :html5
