@@ -1,0 +1,11 @@
+.page-container
+  .page-content-wrapper
+    - if yield(:title).present?
+      .page-head
+        .container
+          .page-title
+            %h1= yield :title
+
+    .page-content
+      .container
+        .page-content-inner= yield
