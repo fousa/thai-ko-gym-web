@@ -19,5 +19,10 @@
     = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'devise', 'data-turbolinks-track': 'reload'
 
-  %body
-    = yield
+  %body.login
+    .logo
+      %a{ :href => "index.html" }
+        %img{ :alt => "", :src => asset_path('login-logo.png') }
+
+    .content
+      = yield
