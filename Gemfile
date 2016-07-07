@@ -40,10 +40,6 @@ gem "jbuilder", "~> 2.5"
 # [dotenv-rails](https://github.com/bkeepers/dotenv)
 gem "dotenv-rails", "~> 2.1"
 
-# The most popular HTML, CSS, and JavaScript framework for developing responsi
-# [bootstrap](https://github.com/twbs/bootstrap-rubygem)
-gem "bootstrap", "~> 4.0.0.alpha3"
-
 # Haml-rails provides Haml generators for Rails 4. It also enables Haml as the
 # [haml-rails](http://github.com/indirect/haml-rails)
 gem "haml-rails", "~> 0.9"
@@ -51,6 +47,10 @@ gem "haml-rails", "~> 0.9"
 # Flexible authentication solution for Rails with Warden
 # [devise](https://github.com/plataformatec/devise)
 gem "devise", "~> 4.2.0"
+
+# Forms made easy!
+# [simple_form](https://github.com/plataformatec/simple_form)
+gem "simple_form", "~> 3.2.1"
 
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin

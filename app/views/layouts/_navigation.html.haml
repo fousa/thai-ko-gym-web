@@ -1,5 +1,31 @@
-%nav.navbar.navbar-light.navbar-static-top.bg-faded
-  .container
-    = link_to 'Thai Ko Gym', root_path, class: 'navbar-brand'
-    .pull-right
-      = link_to 'Logout', destroy_user_session_path, method: :delete
+.page-header
+  .page-header-top
+    .container
+      .page-logo
+        %a{ href: "index.html" }
+          %img.logo-default{:alt => "logo", :src => image_path('menu-logo.png') }
+
+      %a.menu-toggler{:href => "javascript:;"}
+
+      .top-menu
+        %ul.nav.navbar-nav.pull-right
+          %li.dropdown.dropdown-user.dropdown-dark
+            %a.dropdown-toggle{ "data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "javascript:;" }
+              %img.img-circle{ src: image_path('avatar.jpg') }
+              %span.username.username-hide-mobile Bavo
+            %ul.dropdown-menu.dropdown-menu-default
+              %li
+                %a{:href => "page_user_profile_1.html"}
+                  %i.icon-user
+                  My Profile
+              %li
+                = link_to destroy_user_session_path, method: :delete do
+                  %i.icon-key
+                  Log Out
+
+  .page-header-menu
+    .container
+      .hor-menu
+        %ul.nav.navbar-nav
+          %li.active= link_to 'Leden', root_path
+          %li= link_to 'Aanwezigheden', root_path

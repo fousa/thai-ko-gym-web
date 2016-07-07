@@ -8,6 +8,18 @@
 @import 'components-rounded';
 @import 'plugins';
 
-@import 'layout';
-@import 'default';
-@import 'custom';
+@import 'login';
+
+////
+//// Layout overrides.
+////
+
+// Remove the bottom padding from the login form.
+.login .content {
+  padding-bottom: 0;
+}
+
+// Remove the border below the buttons.
+.login .content .form-actions {
+  border-bottom: 0;
+}

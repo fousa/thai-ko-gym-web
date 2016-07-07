@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
+  ### Setup Devise
   devise_for :users
-  
-  root 'home#index'
+
+  ### Home
+  authenticated :user do
+    # Make sure we don't get the authentication message when we didn't login.
+    root 'home#index', as: :authenticated_root
+  end
+
+  # Set the root url
+  root to: redirect('/users/sign_in')
 end
