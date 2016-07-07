@@ -40,16 +40,11 @@ GEM
       tzinfo (~> 1.1)
     arel (7.0.0)
     ast (2.3.0)
-    autoprefixer-rails (6.3.7)
-      execjs
     bcrypt (3.1.11)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
       erubis (>= 2.6.6)
       rack (>= 0.9.0)
-    bootstrap (4.0.0.alpha3)
-      autoprefixer-rails (>= 6.0.3)
-      sass (>= 3.4.19)
     builder (3.2.2)
     byebug (9.0.5)
     coderay (1.1.1)
@@ -275,7 +270,6 @@ PLATFORMS
 
 DEPENDENCIES
   better_errors (~> 2.1)
-  bootstrap (~> 4.0.0.alpha3)
   byebug (~> 9.0)
   coffee-rails (~> 4.2)
   database_cleaner (~> 1.5)

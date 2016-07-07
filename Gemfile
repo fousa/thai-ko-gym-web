@@ -40,10 +40,6 @@ gem "jbuilder", "~> 2.5"
 # [dotenv-rails](https://github.com/bkeepers/dotenv)
 gem "dotenv-rails", "~> 2.1"
 
-# The most popular HTML, CSS, and JavaScript framework for developing responsi
-# [bootstrap](https://github.com/twbs/bootstrap-rubygem)
-gem "bootstrap", "~> 4.0.0.alpha3"
-
 # Haml-rails provides Haml generators for Rails 4. It also enables Haml as the
 # [haml-rails](http://github.com/indirect/haml-rails)
 gem "haml-rails", "~> 0.9"
