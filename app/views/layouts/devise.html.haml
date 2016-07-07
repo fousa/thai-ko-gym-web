@@ -1,0 +1,23 @@
+!!!
+/[if IE 8] <html lang="en" class="ie8">
+/[if IE 9] <html lang="en" class="ie9">
+/ [if !IE]><!
+%html{:lang => "en"}
+  / <![endif]
+  %head
+    %meta{ charset: "utf-8" }
+
+    %title Thai Ko Gym
+
+    %meta{ content: "ie=edge", "http-equiv" => "x-ua-compatible"}
+    %meta{ content: "width=device-width, initial-scale=1", name: "viewport"}
+    %meta{ content: "The web application for Thai Ko Gym.", name: "description"}
+    %meta{ content: "Jelle Vandebeeck", name: "author"}
+
+    = csrf_meta_tags
+
+    = stylesheet_link_tag    'devise', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'devise', 'data-turbolinks-track': 'reload'
+
+  %body
+    = yield
