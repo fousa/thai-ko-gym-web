@@ -10,6 +10,14 @@ nl:
       members: 'Leden'
       presences: 'Aanwezigheden'
 
+  mail:
+    reset_password_instructions:
+      title: 'Hallo %{name},'
+      request_text: 'Je kan je wachtwoord wijzigen via onderstaande link.'
+      reset_link: 'Wachtwoord wijzigen'
+      ignore_text: 'Als je dit niet gevraagd heb dan mag je deze email gerust negeren. Je huidige wachtwoord zal niet veranderen tot dat je op bovenstaande link klikt.'
+      footer: '-- Thai Ko Gym bot'
+
   pages:
     login:
       title: 'Inloggen'
