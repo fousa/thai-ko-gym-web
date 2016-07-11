@@ -10,7 +10,7 @@
       .top-menu
         %ul.nav.navbar-nav.pull-right
           %li.dropdown.dropdown-user.dropdown-dark
-            = link_to 'javascript:;', class: 'dropdown-toggle', data: { 'close-others' => true, toggle: 'dropdown' } do
+            = link_to 'javascript:;', class: 'dropdown-toggle', data: { 'close-others' => true, hover: 'dropdown', toggle: 'dropdown' } do
               = image_tag gravatar_image_url(current_user.email, size: 80), class: 'img-circle'
               %span.username.username-hide-mobile Bavo
             %ul.dropdown-menu.dropdown-menu-default
