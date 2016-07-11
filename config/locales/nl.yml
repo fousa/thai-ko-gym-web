@@ -17,6 +17,12 @@ nl:
       reset_link: 'Wachtwoord wijzigen'
       ignore_text: 'Als je dit niet gevraagd heb dan mag je deze email gerust negeren. Je huidige wachtwoord zal niet veranderen tot dat je op bovenstaande link klikt.'
       footer: '-- Thai Ko Gym bot'
+    confirm_account:
+      title: 'Hallo %{name},'
+      confirm_text: 'Je kan je account activeren via onderstaande link.'
+      confirm_link: 'Activeer account'
+      footer: '-- Thai Ko Gym bot'
+
 
   pages:
     login:
