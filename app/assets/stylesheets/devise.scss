@@ -23,3 +23,8 @@
 .login .content .form-actions {
   border-bottom: 0;
 }
+
+// No link color in the footer.
+.login a {
+  color: #7a8ca5;
+}

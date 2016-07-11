@@ -1,5 +1,10 @@
 nl:
   activerecord:
+    attributes:
+      user:
+        reset_password_token: 'Herstel token'
+        password: 'Wachtwoord'
+        password_confirmation: 'Wachtwoord bevestiging'
     errors:
       messages:
         record_invalid: 'Validatie mislukt: %{errors}'

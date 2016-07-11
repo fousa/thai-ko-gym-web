@@ -2,30 +2,30 @@
   .page-header-top
     .container
       .page-logo
-        %a{ href: "index.html" }
-          %img.logo-default{:alt => "logo", :src => image_path('menu-logo.png') }
+        = link_to root_path do
+          = image_tag 'menu-logo.png', class: 'logo-default'
 
-      %a.menu-toggler{:href => "javascript:;"}
+      = link_to 'javascript:;', '', class: 'menu-toggler'
 
       .top-menu
         %ul.nav.navbar-nav.pull-right
           %li.dropdown.dropdown-user.dropdown-dark
-            %a.dropdown-toggle{ "data-close-others" => "true", "data-hover" => "dropdown", "data-toggle" => "dropdown", :href => "javascript:;" }
-              %img.img-circle{ src: image_path('avatar.jpg') }
+            = link_to 'javascript:;', class: 'dropdown-toggle', data: { 'close-others' => true, toggle: 'dropdown' } do
+              = image_tag 'avatar.jpg', class: 'img-circle'
               %span.username.username-hide-mobile Bavo
             %ul.dropdown-menu.dropdown-menu-default
               %li
-                %a{:href => "page_user_profile_1.html"}
+                = link_to '' do
                   %i.icon-user
-                  My Profile
+                  = t 'menu.edit_profile'
               %li
                 = link_to destroy_user_session_path, method: :delete do
                   %i.icon-key
-                  Log Out
+                  = t 'menu.log_out'
 
   .page-header-menu
     .container
       .hor-menu
         %ul.nav.navbar-nav
-          %li.active= link_to 'Leden', root_path
-          %li= link_to 'Aanwezigheden', root_path
+          %li.active= link_to t('menu.items.members'), root_path
+          %li= link_to t('menu.items.presences'), root_path

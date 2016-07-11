@@ -7,7 +7,7 @@
   %head
     %meta{ charset: "utf-8" }
 
-    %title Thai Ko Gym
+    %title= t 'global.title'
 
     %meta{ content: "ie=edge", "http-equiv" => "x-ua-compatible"}
     %meta{ content: "width=device-width, initial-scale=1", name: "viewport"}
@@ -21,10 +21,9 @@
 
   %body.login
     .logo
-      %a{ :href => "index.html" }
-        %img{ :alt => "", :src => asset_path('login-logo.png') }
+      = link_to root_path do
+        = image_tag 'login-logo.png'
 
-    .content
-      = yield
+    .content= yield
 
-    .copyright 2014 © Crafted by fousa
+    .copyright= t('global.footer', year: Time.now.year, author: author_tag).html_safe

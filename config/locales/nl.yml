@@ -1,2 +1,41 @@
-en:
-  hello: "Hello world"
+nl:
+  global:
+    title: 'Thai Ko Gym'
+    footer: '%{year} © Crafted by %{author}'
+
+  menu:
+    edit_profile: 'Profiel aanpassen'
+    log_out: 'Uitloggen'
+    items:
+      members: 'Leden'
+      presences: 'Aanwezigheden'
+
+  pages:
+    login:
+      title: 'Inloggen'
+      placeholders:
+        email: 'E-mail'
+        password: 'Wachtwoord'
+      buttons:
+        submit: 'Login'
+      links:
+        forgot_password: 'Wachtwoord vergeten?'
+
+    forgot_password:
+      title: 'Wachtwoord vergeten?'
+      placeholders:
+        email: 'E-mail'
+      buttons:
+        submit: 'Stuur herstel instructies'
+      links:
+        login: 'Inloggen'
+
+    reset_password:
+      title: 'Wachtwoord herstellen'
+      placeholders:
+        password: 'Wachtwoord'
+        password_confirmation: 'Bevestig wachtwoord'
+      buttons:
+        submit: 'Herstel wachtwoord'
+      links:
+        login: 'Inloggen'

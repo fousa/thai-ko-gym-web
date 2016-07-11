@@ -1,15 +1,15 @@
 = simple_form_for(resource, as: resource_name, url: password_path(resource_name), wrapper: 'login_form', html: { method: :put }) do |f|
   = f.input :reset_password_token, as: :hidden
 
-  %h3.form-title.font-green Change your password
+  %h3.form-title.font-green= t 'pages.reset_password.title'
   - if resource.errors.count > 0
     .alert.alert-danger
       - resource.errors.full_messages.each do |message|
         %span= message
 
-  = f.input :password, required: false, autocomplete: false, autofocus: true, placeholder: 'New password'
-  = f.input :password_confirmation, required: false, autocomplete: false, placeholder: 'Confirm your new password'
+  = f.input :password,              required: false, autocomplete: false, autofocus: true, placeholder: t('pages.reset_password.placeholders.password')
+  = f.input :password_confirmation, required: false, autocomplete: false,                  placeholder: t('pages.reset_password.placeholders.password_confirmation')
 
   .form-actions
-    = f.button :submit, "Change my password", class: 'green uppercase'
-    = link_to 'Log in', new_session_path(resource_name), class: 'forget-password'
+    = f.button :submit, t('pages.reset_password.buttons.submit'), class: 'green uppercase'
+    = link_to t('pages.reset_password.links.login'), new_session_path(resource_name), class: 'forget-password'

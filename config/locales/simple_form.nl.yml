@@ -1,4 +1,4 @@
-en:
+nl:
   simple_form:
     "yes": 'Ja'
     "no": 'Neen'
@@ -14,6 +14,7 @@ en:
     # labels:
     #   defaults:
     #     password: 'Password'
+    # labels:
     #   user:
     #     new:
     #       email: 'E-mail to sign in.'

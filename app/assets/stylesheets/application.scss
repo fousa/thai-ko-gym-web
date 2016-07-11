@@ -11,3 +11,12 @@
 @import 'layout';
 @import 'default';
 @import 'custom';
+
+////
+//// Layout overrides.
+////
+
+// No link color in the footer.
+.copyright a {
+  color: #a2abb7;
+}
