@@ -103,6 +103,22 @@ group :test do
   # [rspec-rails](https://github.com/rspec/rspec-rails)
   gem "rspec-rails", "~> 3.5"
 
+  # Launchy is helper class for launching cross-platform applications in a fire
+  # [launchy](http://github.com/copiousfreetime/launchy)
+  gem "launchy", "~> 2.4.3"
+
+  # Capybara is an integration testing tool for rack based web applications. It
+  # [capybara](http://github.com/jnicklas/capybara)
+  gem 'capybara', '~> 2.6.2'
+
+  # Test your ActionMailer and Mailer messages in Capybara
+  # [capybara-email](https://github.com/dockyard/capybara-email)
+  gem 'capybara-email', '~> 2.5.0'
+
+  # Poltergeist is a driver for Capybara that allows you to run your tests on a
+  # [poltergeist](http://github.com/teampoltergeist/poltergeist)
+  gem "poltergeist", "~> 1.9.0"
+
   # factory_girl_rails provides integration between factory_girl and rails 3
   # [factory_girl_rails](http://github.com/thoughtbot/factory_girl_rails)
   gem "factory_girl_rails", "~> 4.7"
