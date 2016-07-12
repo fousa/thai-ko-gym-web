@@ -1,0 +1,36 @@
+%p#notice= notice
+
+%p
+  %b First name:
+  = @user.first_name
+%p
+  %b Last name:
+  = @user.last_name
+%p
+  %b Sex:
+  = @user.sex
+%p
+  %b Birth date:
+  = @user.birth_date
+%p
+  %b Category:
+  = @user.category
+%p
+  %b Type:
+  = @user.type
+%p
+  %b Rankings:
+  = @user.rankings
+%p
+  %b Phone number:
+  = @user.phone_number
+%p
+  %b Active:
+  = @user.active
+%p
+  %b Comments:
+  = @user.comments
+
+= link_to 'Edit', edit_user_path(@user)
+\|
+= link_to 'Back', users_path

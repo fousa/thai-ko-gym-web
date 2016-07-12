@@ -8,6 +8,9 @@ Rails.application.routes.draw do
     root 'home#index', as: :authenticated_root
   end
 
+  ### users
+  resources :users
+
   # Set the root url
   root to: redirect('/users/sign_in')
 end
