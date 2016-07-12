@@ -8,5 +8,6 @@
 //= require app
 //= require layout
 
+//= require retina_tag
 //= require turbolinks
 //= require_tree .
