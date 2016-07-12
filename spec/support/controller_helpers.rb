@@ -1,13 +1,13 @@
 module ControllerHelpers
-  def sign_in(pilot = double(:pilot))
-    @pilot = pilot
-    allow(request.env['warden']).to receive(:authenticate!) { pilot }
-    allow(controller).to receive(:current_pilot) { pilot }
+  def sign_in(pilot = double(:user))
+    @user = user
+    allow(request.env['warden']).to receive(:authenticate!) { user }
+    allow(controller).to receive(:current_user) { user }
   end
 
   def redirect_for_login(&_block)
     yield
-    redirect_to(new_pilot_session_path)
+    redirect_to(new_user_session_path)
   end
 
   def redirect_to_path(path, &_block)
@@ -18,11 +18,6 @@ module ControllerHelpers
   def render_template_name(template_name, &_block)
     yield
     render_template template_name
-  end
-
-  def csv_upload(filename)
-    path = File.join(Rails.root, "spec/fixtures/#{filename}.csv")
-    fixture_file_upload(path)
   end
 end
 
