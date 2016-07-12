@@ -1,4 +1,11 @@
 module ApplicationHelper
+  def menu_tag(title, path, active_controller)
+    active = active_controller == controller_name
+    content_tag :li, class: active ? 'active' : nil do
+      link_to title, path
+    end
+  end
+
   def author_tag
     link_to 'fousa', 'http://fousa.be', target: '_BLANK', title: 'Crafting awesome (web)apps since 2005!'
   end
