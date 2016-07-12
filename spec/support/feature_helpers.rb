@@ -4,7 +4,7 @@ module FeatureHelpers
     element.native.send_key(:Enter)
   end
 
-  def login_as_user(pilot = nil)
+  def login_as_user(user = nil)
     @user = user || create(:user)
     login_as(@user, scope: :user)
   end
