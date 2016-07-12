@@ -1,5 +1,5 @@
 module ControllerHelpers
-  def sign_in(pilot = double(:user))
+  def sign_in(user = double(:user))
     @user = user
     allow(request.env['warden']).to receive(:authenticate!) { user }
     allow(controller).to receive(:current_user) { user }
