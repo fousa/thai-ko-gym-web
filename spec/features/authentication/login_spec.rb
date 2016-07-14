@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 describe 'login', type: :feature do
   before do
-    @user = create(:user, password: '123123123', password_confirmation: '123123123')
+    @user = create(:user_with_password, password: '123123123', password_confirmation: '123123123')
 
     visit root_path
   end

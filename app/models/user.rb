@@ -17,4 +17,18 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name,  presence: true
   validates :sex,        presence: true
+
+  ### devise
+  def password_required?
+    # Password is required if it is being set, but not for new records
+    if !persisted?
+      false
+    else
+      !password.nil? || !password_confirmation.nil?
+    end
+  end
+
+  def email_required?
+    !confirmed_at.nil?
+  end
 end

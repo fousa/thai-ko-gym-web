@@ -2,7 +2,7 @@ require 'rails_helper.rb'
 
 describe 'password reset', type: :feature do
   before do
-    @user = create(:user)
+    @user = create(:user_with_password)
 
     clear_emails
     show_reset_path

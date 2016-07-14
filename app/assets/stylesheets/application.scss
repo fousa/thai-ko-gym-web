@@ -30,3 +30,22 @@
 .bootstrap-select .btn-default:focus {
   background-color: white;
 }
+
+// Set the font color to gray when no error.
+.control-label .required,
+.form-group .required {
+  color: #555555;
+}
+
+// Set the correct padding for required fields.
+.form-group input.required {
+  padding-left: 12px;
+}
+
+// Set the correct border and text color when errored.
+.has-error .control-label,
+.has-error .form-control,
+.has-error .bootstrap-select .btn {
+  color: #e02222;
+  border-color: #e02222;
+}
