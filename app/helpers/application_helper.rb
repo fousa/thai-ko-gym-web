@@ -1,6 +1,14 @@
 module ApplicationHelper
   ### Actions
 
+  def back_tag(path)
+    link_to path, class: "btn btn-circle btn-default" do
+      content = content_tag :i, nil, class: "fa fa-long-arrow-left"
+      content << " #{t('global.links.back')}"
+      content
+    end
+  end
+
   def add_tag(path, icon='plus')
     link_to path, class: "btn btn-circle btn-default" do
       content = content_tag :i, nil, class: "fa fa-#{icon}"

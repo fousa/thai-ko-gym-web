@@ -3,6 +3,7 @@ nl:
     title: 'Thai Ko Gym'
     footer: '%{year} © Crafted by %{author}'
     links:
+      back: 'Terug naar overzicht'
       add: 'Toevoegen'
       edit: 'Wijzig'
       delete: 'Verwijder'
@@ -60,6 +61,9 @@ nl:
 
     users:
       form:
+        titles:
+          new: 'Lid aanmaken'
+          edit: 'Lid wijzigen'
         labels:
           personal: 'Persoonlijke gegevens'
           club: 'Club gegevens'
