@@ -29,7 +29,7 @@
               .col-md-9= f.input :city
             .row
               .col-md-12= f.input :country, prompt: :translate
-          .form-actions
+          .form-actions.hidden-sm
             = f.button :submit, class: 'green'
 
     .col-md-6
@@ -57,3 +57,5 @@
             .col-md-6= f.input :type, prompt: :translate
           .row
             .col-md-6= f.input :rankings, prompt: :translate
+          .form-actions.visible-sm
+            = f.button :submit, class: 'green'
