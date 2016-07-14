@@ -8,7 +8,7 @@
         .portlet-title
           .caption.font-green
             %i.icon-bubble.font-green
-            %span.caption-subject.bold.uppercase Persoonlijke gegevens
+            %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.personal'
         .portlet-body.form
           .form-body
             .row
@@ -33,30 +33,23 @@
             = f.button :submit, class: 'green'
 
     .col-md-6
-    .col-md-6
       .portlet.light
         .portlet-title
           .caption.font-green
             %i.icon-bubble.font-green
-            %span.caption-subject.bold.uppercase Website gegevens
+            %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.club'
         .portlet-body.form
           .row
             .col-md-6= f.input :active
-          .row
-            .col-md-12= f.input :comments, input_html: { rows: 4 }
-
-    .col-md-6
-      .portlet.light
-        .portlet-title
-          .caption.font-green
-            %i.icon-bubble.font-green
-            %span.caption-subject.bold.uppercase Club gegevens
-        .portlet-body.form
+          %hr
           .row
             .col-md-6= f.input :category, prompt: :translate
             .col-md-6= f.input :type, prompt: :translate
           .row
             .col-md-6= f.input :rankings, prompt: :translate
+          %hr
+          .row
+            .col-md-12= f.input :comments, input_html: { rows: 4 }
           .form-actions.visible-sm
             = f.button :submit, class: 'green'
 

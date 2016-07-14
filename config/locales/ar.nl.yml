@@ -38,7 +38,8 @@ nl:
         country: 'Land'
         category: 'Categorie'
         rankings: 'Ranking'
-        actief: 'Actief lid'
+        active: 'Actief lid'
+        comments: 'Opmerkingen'
     errors:
       messages:
         record_invalid: 'Validatie mislukt: %{errors}'

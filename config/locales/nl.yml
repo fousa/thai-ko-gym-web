@@ -53,3 +53,9 @@ nl:
         submit: 'Herstel wachtwoord'
       links:
         login: 'Inloggen'
+
+    users:
+      form:
+        labels:
+          personal: 'Persoonlijke gegevens'
+          club: 'Club gegevens'
