@@ -69,6 +69,10 @@ nl:
         labels:
           personal: 'Persoonlijke gegevens'
           club: 'Club gegevens'
+        alerts:
+          create: '%{name} is succesvol aangemaakt.'
+          edit: '%{name} is succesvol gewijzigd.'
+          delete: '%{name} is succesvol verwijderd.'
       list:
         title: 'Ledenlijst'
         labels:
