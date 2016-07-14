@@ -9,4 +9,7 @@ class User < ApplicationRecord
 
   ### Enums
   enum sex: [:m, :w]
+  enum category: [:youth, :adults]
+  enum type: [:competition, :amateur]
+  enum rankings: [:a, :b, :c, :d, :j]
 end

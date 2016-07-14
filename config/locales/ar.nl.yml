@@ -4,7 +4,23 @@ nl:
       sex:
         m: 'Man'
         w: 'Vrouw'
+      category:
+        youth: 'Jeugd'
+        adults: 'Volwassenen'
+      type:
+        competition: 'Competitie'
+        amateur: 'Recreant'
+      rankings:
+        a: 'A'
+        b: 'B'
+        c: 'C'
+        d: 'D'
+        j: 'J'
   activerecord:
+    models:
+      user:
+        one: 'Lid'
+        other: 'Leden'
     attributes:
       user:
         reset_password_token: 'Herstel token'
@@ -20,6 +36,9 @@ nl:
         postalcode: 'Postcode'
         city: 'Gemeente'
         country: 'Land'
+        category: 'Categorie'
+        rankings: 'Ranking'
+        actief: 'Actief lid'
     errors:
       messages:
         record_invalid: 'Validatie mislukt: %{errors}'

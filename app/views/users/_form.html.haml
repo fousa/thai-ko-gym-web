@@ -1,5 +1,6 @@
 = simple_form_for @user do |f|
-  = f.error_notification
+  .row
+    .col-md-6= f.error_notification
 
   .row
     .col-md-6
@@ -15,7 +16,7 @@
               .col-md-6= f.input :last_name
             .row
               .col-md-6= f.input :birth_date, as: :string
-              .col-md-6= f.input :sex
+              .col-md-6= f.input :sex, prompt: :translate
             .row
               .col-md-12= f.input :email
             .row
@@ -27,7 +28,7 @@
               .col-md-3= f.input :postalcode
               .col-md-9= f.input :city
             .row
-              .col-md-12= f.input :country
+              .col-md-12= f.input :country, prompt: :translate
           .form-actions
             = f.button :submit, class: 'green'
 
@@ -52,7 +53,7 @@
             %span.caption-subject.bold.uppercase Club gegevens
         .portlet-body.form
           .row
-            .col-md-6= f.input :category
-            .col-md-6= f.input :type
+            .col-md-6= f.input :category, prompt: :translate
+            .col-md-6= f.input :type, prompt: :translate
           .row
-            .col-md-6= f.input :rankings
+            .col-md-6= f.input :rankings, prompt: :translate
