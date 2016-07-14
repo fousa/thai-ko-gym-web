@@ -2,12 +2,16 @@ nl:
   global:
     title: 'Thai Ko Gym'
     footer: '%{year} © Crafted by %{author}'
+    links:
+      add: 'Toevoegen'
+      edit: 'Wijzig'
+      delete: 'Verwijder'
 
   menu:
     edit_profile: 'Profiel aanpassen'
     log_out: 'Uitloggen'
     items:
-      members: 'Leden'
+      members: 'Ledenlijst'
       presences: 'Aanwezigheden'
 
   mail:
@@ -59,3 +63,12 @@ nl:
         labels:
           personal: 'Persoonlijke gegevens'
           club: 'Club gegevens'
+      list:
+        title: 'Ledenlijst'
+        labels:
+          overview: 'Overzicht'
+          name: 'Naam'
+          sex: 'Geslacht'
+          age: 'Leeftijd'
+          city: 'Woonplaats'
+          active: 'Actief'

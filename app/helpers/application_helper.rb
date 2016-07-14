@@ -1,4 +1,32 @@
 module ApplicationHelper
+  ### Actions
+
+  def add_tag(path, icon='plus')
+    link_to path, class: "btn btn-circle btn-default" do
+      content = content_tag :i, nil, class: "fa fa-#{icon}"
+      content << " #{t('global.links.add')}"
+      content
+    end
+  end
+
+  def edit_tag(path)
+    link_to path, class: "btn btn-circle btn-sm btn-outline green" do
+      content = content_tag :i, nil, class: 'fa fa-edit'
+      content << " #{t('global.links.edit')}"
+      content
+    end
+  end
+
+  def delete_tag(path)
+    link_to path, method: :delete, class: "btn btn-circle btn-sm btn-outline red" do
+      content = content_tag :i, nil, class: 'fa fa-trash'
+      content << " #{t('global.links.delete')}"
+      content
+    end
+  end
+
+  ### Menu
+
   def menu_tag(title, path, active_controller)
     active = active_controller == controller_name
     content_tag :li, class: active ? 'active' : nil do

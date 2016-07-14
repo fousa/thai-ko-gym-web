@@ -49,3 +49,23 @@
   color: #e02222;
   border-color: #e02222;
 }
+
+// Remove the portlet title bottom border.
+.listing .portlet > .portlet-title {
+  border-bottom: 0;
+}
+
+// Add extra toolbar button padding.
+.btn-toolbar {
+  margin-top: 1em;
+}
+
+// Correctly align the table text.
+.table > thead > tr > th,
+.table > tbody > tr > td {
+  line-height: 2;
+}
+
+.table > tbody > tr.inactive {
+  opacity: 0.5;
+}

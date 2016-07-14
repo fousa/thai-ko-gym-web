@@ -34,7 +34,7 @@ nl:
         phone_number: 'Telefoonnummer'
         address: 'Straat + huisnummer'
         postalcode: 'Postcode'
-        city: 'Gemeente'
+        city: 'Woonplaats'
         country: 'Land'
         category: 'Categorie'
         rankings: 'Ranking'

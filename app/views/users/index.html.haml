@@ -1,39 +1,33 @@
-%h1 Listing users
+- content_for :title, t('pages.users.list.title')
+- content_for :toolbar do
+  = add_tag new_user_path, 'user-plus'
 
-%table
-  %thead
-    %tr
-      %th First name
-      %th Last name
-      %th Sex
-      %th Birth date
-      %th Category
-      %th Type
-      %th Rankings
-      %th Phone number
-      %th Active
-      %th Comments
-      %th
-      %th
-      %th
-
-  %tbody
-    - @users.each do |user|
-      %tr
-        %td= user.first_name
-        %td= user.last_name
-        %td= user.sex
-        %td= user.birth_date
-        %td= user.category
-        %td= user.type
-        %td= user.rankings
-        %td= user.phone_number
-        %td= user.active
-        %td= user.comments
-        %td= link_to 'Show', user
-        %td= link_to 'Edit', edit_user_path(user)
-        %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-%br
-
-= link_to 'New User', new_user_path
+.row.listing
+  .col-md-12
+    .portlet.light
+      .portlet-title
+        .caption.font-green
+          %i.fa.fa-list.font-green
+          = t 'pages.users.list.labels.overview'
+      .portlet-body
+        .table-responsive
+          %table.table.table-striped.table-bordered
+            %thead
+              %tr
+                %th{ style: 'width: 2em;' }
+                %th= t 'pages.users.list.labels.name'
+                %th= t 'pages.users.list.labels.city'
+                %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.sex'
+                %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.age'
+                %th{ style: 'width: 14em;' }
+            %tbody
+              - @users.each do |user|
+                %tr{ class: user.active? ? nil : 'inactive' }
+                  %td= active_tag user
+                  %td= user.name
+                  %td= user.city
+                  %td= sex_tag user
+                  %td= user.age
+                  %td
+                    = edit_tag edit_user_path(user)
+                    = delete_tag user
