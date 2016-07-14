@@ -4,6 +4,9 @@
 @import 'simple-line-icons';
 @import 'bootstrap';
 @import 'bootstrap-switch';
+@import 'bootstrap-select';
+@import 'bootstrap-datepicker';
+@import 'datatables.bootstrap';
 
 @import 'components-rounded';
 @import 'plugins';
@@ -19,4 +22,51 @@
 // No link color in the footer.
 .copyright a {
   color: #a2abb7;
+}
+
+// Remove the background color from the bootstrap-select.
+.open > .btn-default.dropdown-toggle,
+.open > .btn-default.dropdown-toggle:hover,
+.bootstrap-select .btn-default:hover,
+.bootstrap-select .btn-default:focus {
+  background-color: white;
+}
+
+// Set the font color to gray when no error.
+.control-label .required,
+.form-group .required {
+  color: #555555;
+}
+
+// Set the correct padding for required fields.
+.form-group input.required {
+  padding-left: 12px;
+}
+
+// Set the correct border and text color when errored.
+.has-error .control-label,
+.has-error .form-control,
+.has-error .bootstrap-select .btn {
+  color: #e02222;
+  border-color: #e02222;
+}
+
+// Remove the portlet title bottom border.
+.listing .portlet > .portlet-title {
+  border-bottom: 0;
+}
+
+// Add extra toolbar button padding.
+.btn-toolbar {
+  margin-top: 1em;
+}
+
+// Correctly align the table text.
+.table > thead > tr > th,
+.table > tbody > tr > td {
+  line-height: 2;
+}
+
+.table > tbody > tr.inactive {
+  opacity: 0.5;
 }

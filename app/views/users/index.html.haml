@@ -1,0 +1,38 @@
+- content_for :title, t('pages.users.list.title')
+- content_for :toolbar do
+  = add_tag new_user_path, 'user-plus'
+
+.row.listing
+  .col-md-12
+    .portlet.light
+      .portlet-title
+        .caption.font-green
+          %i.fa.fa-list.font-green
+          = t 'pages.users.list.labels.overview'
+      .portlet-body
+        .table-responsive
+          %table.table.table-striped.table-bordered
+            %thead
+              %tr
+                %th{ style: 'width: 2em;' }
+                %th= t 'pages.users.list.labels.name'
+                %th= t 'pages.users.list.labels.city'
+                %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.sex'
+                %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.age'
+                %th{ style: 'width: 11em;' }
+            %tbody
+              - @users.each do |user|
+                %tr{ class: user.active? ? nil : 'inactive' }
+                  %td= active_tag user
+                  %td= user.name
+                  %td= user.city
+                  %td= sex_tag user
+                  %td= user.age
+                  %td
+                    = edit_tag edit_user_path(user)
+                    = delete_tag user, user.name
+
+:javascript
+  $('.table').DataTable( {
+    colReorder: true
+  });

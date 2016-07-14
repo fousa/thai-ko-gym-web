@@ -1,10 +1,45 @@
 nl:
+  enums:
+    user:
+      sex:
+        m: 'Man'
+        w: 'Vrouw'
+      category:
+        youth: 'Jeugd'
+        adults: 'Volwassenen'
+      type:
+        competition: 'Competitie'
+        amateur: 'Recreant'
+      rankings:
+        a: 'A'
+        b: 'B'
+        c: 'C'
+        d: 'D'
+        j: 'J'
   activerecord:
+    models:
+      user:
+        one: 'Lid'
+        other: 'Leden'
     attributes:
       user:
         reset_password_token: 'Herstel token'
         password: 'Wachtwoord'
         password_confirmation: 'Wachtwoord bevestiging'
+        first_name: 'Voornaam'
+        last_name: 'Achternaam'
+        email: 'E-mailadres'
+        birth_date: 'Geboortedatum'
+        sex: 'Geslacht'
+        phone_number: 'Telefoonnummer'
+        address: 'Straat + huisnummer'
+        postalcode: 'Postcode'
+        city: 'Woonplaats'
+        country: 'Land'
+        category: 'Categorie'
+        rankings: 'Ranking'
+        active: 'Actief lid'
+        comments: 'Opmerkingen'
     errors:
       messages:
         record_invalid: 'Validatie mislukt: %{errors}'

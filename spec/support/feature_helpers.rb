@@ -5,7 +5,7 @@ module FeatureHelpers
   end
 
   def login_as_user(user = nil)
-    @user = user || create(:user)
+    @user = user || create(:user_with_password)
     login_as(@user, scope: :user)
   end
 end

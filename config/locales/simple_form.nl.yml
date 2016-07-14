@@ -9,7 +9,7 @@ nl:
       # When using html, text and mark won't be used.
       # html: '<abbr title="required">*</abbr>'
     error_notification:
-      default_message: "Bekijk onderstaande fouten:"
+      default_message: "Onderstaand formulier bevat (verschillende) fouten. Gelieve deze aan te passen."
     # Examples
     # labels:
     #   defaults:
@@ -20,13 +20,13 @@ nl:
     #       email: 'E-mail to sign in.'
     #     edit:
     #       email: 'E-mail.'
-    # hints:
-    #   defaults:
-    #     username: 'User name to sign in.'
-    #     password: 'No special characters, please.'
-    # include_blanks:
-    #   defaults:
-    #     age: 'Rather not say'
-    # prompts:
-    #   defaults:
-    #     age: 'Select your age'
+    hints:
+      user:
+        email: 'User name to sign in.'
+    prompts:
+      user:
+        sex: 'Selecteer het geslacht'
+        country: 'Selecteer het land'
+        category: 'Selecteer een categorie'
+        type: 'Selecteer een type'
+        rankings: 'Selecteer een ranking'

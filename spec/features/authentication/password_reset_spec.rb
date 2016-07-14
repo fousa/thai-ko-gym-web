@@ -2,14 +2,14 @@ require 'rails_helper.rb'
 
 describe 'password reset', type: :feature do
   before do
-    @user = create(:user)
+    @user = create(:user_with_password)
 
     clear_emails
     show_reset_path
   end
 
   it 'should send reset instructions' do
-    fill_in 'Email', with: @user.email
+    fill_in 'E-mailadres', with: @user.email
     click_button 'Stuur herstel instructies'
 
     expect(page).to have_content('Inloggen')
@@ -19,10 +19,10 @@ describe 'password reset', type: :feature do
   end
 
   it 'should fail to send reset instructions' do
-    fill_in 'Email', with: 'jake@snake.be'
+    fill_in 'E-mailadres', with: 'jake@snake.be'
     click_button 'Stuur herstel instructies'
 
-    expect(page).to have_content('Email niet gevonden')
+    expect(page).to have_content('E-mailadres niet gevonden')
     expect(current_email).to be_nil
   end
 
