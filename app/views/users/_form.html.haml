@@ -15,7 +15,7 @@
               .col-md-6= f.input :first_name
               .col-md-6= f.input :last_name
             .row
-              .col-md-6= f.input :birth_date, as: :string
+              .col-md-6= f.input :birth_date, as: :string, input_html: { class: 'date-picker' }
               .col-md-6= f.input :sex, prompt: :translate
             .row
               .col-md-12= f.input :email
@@ -70,4 +70,10 @@
     liveSearch: true,
     size: 5,
     selectOnTab: true
+  });
+
+  $(".date-picker").datepicker({
+    orientation: "left",
+    autoclose: true,
+    format: "dd/mm/yyyy"
   });

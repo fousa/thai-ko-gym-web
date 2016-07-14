@@ -5,6 +5,7 @@
 //= require bootstrap-hover-dropdown
 //= require jquery.slimscroll
 //= require bootstrap-select
+//= require bootstrap-datepicker
 
 //= require app
 //= require layout
