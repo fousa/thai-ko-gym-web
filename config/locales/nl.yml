@@ -2,6 +2,8 @@ nl:
   global:
     title: 'Thai Ko Gym'
     footer: '%{year} © Crafted by %{author}'
+    labels:
+      delete: 'Ben je zeker dat je %{name} wil verwijderen?'
     links:
       back: 'Terug naar overzicht'
       add: 'Toevoegen'

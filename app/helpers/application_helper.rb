@@ -25,8 +25,8 @@ module ApplicationHelper
     end
   end
 
-  def delete_tag(path)
-    link_to path, method: :delete, class: "btn btn-circle btn-sm btn-outline red" do
+  def delete_tag(path, name)
+    link_to path, method: :delete, class: "btn btn-circle btn-sm btn-outline red", data: { confirm: t('global.labels.delete', name: name) } do
       content = content_tag :i, nil, class: 'fa fa-trash'
       content << " #{t('global.links.delete')}"
       content
