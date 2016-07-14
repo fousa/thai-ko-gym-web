@@ -19,7 +19,7 @@
                 %th= t 'pages.users.list.labels.city'
                 %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.sex'
                 %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.age'
-                %th{ style: 'width: 14em;' }
+                %th{ style: 'width: 11em;' }
             %tbody
               - @users.each do |user|
                 %tr{ class: user.active? ? nil : 'inactive' }
@@ -31,3 +31,8 @@
                   %td
                     = edit_tag edit_user_path(user)
                     = delete_tag user, user.name
+
+:javascript
+  $('.table').DataTable( {
+    colReorder: true
+  });
