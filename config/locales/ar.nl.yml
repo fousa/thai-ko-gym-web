@@ -1,10 +1,25 @@
 nl:
+  enums:
+    user:
+      sex:
+        m: 'Man'
+        w: 'Vrouw'
   activerecord:
     attributes:
       user:
         reset_password_token: 'Herstel token'
         password: 'Wachtwoord'
         password_confirmation: 'Wachtwoord bevestiging'
+        first_name: 'Voornaam'
+        last_name: 'Achternaam'
+        email: 'E-mailadres'
+        birth_date: 'Geboortedatum'
+        sex: 'Geslacht'
+        phone_number: 'Telefoonnummer'
+        address: 'Straat + huisnummer'
+        postalcode: 'Postcode'
+        city: 'Gemeente'
+        country: 'Land'
     errors:
       messages:
         record_invalid: 'Validatie mislukt: %{errors}'

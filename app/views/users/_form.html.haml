@@ -1,17 +1,58 @@
-= simple_form_for(@user) do |f|
+= simple_form_for @user do |f|
   = f.error_notification
 
-  .form-inputs
-    = f.input :first_name
-    = f.input :last_name
-    = f.input :sex
-    = f.input :birth_date
-    = f.input :category
-    = f.input :type
-    = f.input :rankings
-    = f.input :phone_number
-    = f.input :active
-    = f.input :comments
+  .row
+    .col-md-6
+      .portlet.light
+        .portlet-title
+          .caption.font-green
+            %i.icon-bubble.font-green
+            %span.caption-subject.bold.uppercase Persoonlijke gegevens
+        .portlet-body.form
+          .form-body
+            .row
+              .col-md-6= f.input :first_name
+              .col-md-6= f.input :last_name
+            .row
+              .col-md-6= f.input :birth_date, as: :string
+              .col-md-6= f.input :sex
+            .row
+              .col-md-12= f.input :email
+            .row
+              .col-md-6= f.input :phone_number
+            %hr
+            .row
+              .col-md-12= f.input :address
+            .row
+              .col-md-3= f.input :postalcode
+              .col-md-9= f.input :city
+            .row
+              .col-md-12= f.input :country
+          .form-actions
+            = f.button :submit, class: 'green'
 
-  .form-actions
-    = f.button :submit
+    .col-md-6
+    .col-md-6
+      .portlet.light
+        .portlet-title
+          .caption.font-green
+            %i.icon-bubble.font-green
+            %span.caption-subject.bold.uppercase Website gegevens
+        .portlet-body.form
+          .row
+            .col-md-6= f.input :active
+          .row
+            .col-md-12= f.input :comments
+
+    .col-md-6
+      .portlet.light
+        .portlet-title
+          .caption.font-green
+            %i.icon-bubble.font-green
+            %span.caption-subject.bold.uppercase Club gegevens
+        .portlet-body.form
+          .row
+            .col-md-6= f.input :category
+            .col-md-6= f.input :type
+          .row
+            .col-md-6= f.input :rankings

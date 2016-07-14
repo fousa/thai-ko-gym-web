@@ -60,6 +60,14 @@ gem "gravatar_image_tag", "~> 1.2.0"
 # [retina_tag](http://github.com/davydotcom/retina_tag)
 gem "retina_tag", "~> 1.3.1"
 
+# Provides a simple helper to get an HTML select list of countries.  The list
+# [country_select](https://github.com/stefanpenner/country_select)
+gem "country_select", "~> 2.5.2"
+
+#  Help ActiveRecord::Enum feature to work fine with I18n and simple_form.
+# [enum_help]()
+gem "enum_help", "~> 0.0.15"
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
