@@ -28,7 +28,7 @@
               .col-md-3= f.input :postalcode
               .col-md-9= f.input :city
             .row
-              .col-md-12= f.input :country, prompt: :translate
+              .col-md-12= f.input :country, prompt: :translate, input_html: { class: 'live' }
           .form-actions.hidden-sm
             = f.button :submit, class: 'green'
 
@@ -59,3 +59,15 @@
             .col-md-6= f.input :rankings, prompt: :translate
           .form-actions.visible-sm
             = f.button :submit, class: 'green'
+
+:javascript
+  $('.enum').selectpicker({
+    size: 5,
+    selectOnTab: true
+  });
+
+  $('.live').selectpicker({
+    liveSearch: true,
+    size: 5,
+    selectOnTab: true
+  });

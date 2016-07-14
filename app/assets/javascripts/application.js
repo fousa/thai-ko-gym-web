@@ -4,6 +4,7 @@
 //= require js.cookie.min
 //= require bootstrap-hover-dropdown
 //= require jquery.slimscroll
+//= require bootstrap-select
 
 //= require app
 //= require layout

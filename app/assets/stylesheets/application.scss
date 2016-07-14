@@ -4,6 +4,7 @@
 @import 'simple-line-icons';
 @import 'bootstrap';
 @import 'bootstrap-switch';
+@import 'bootstrap-select';
 
 @import 'components-rounded';
 @import 'plugins';
@@ -19,4 +20,12 @@
 // No link color in the footer.
 .copyright a {
   color: #a2abb7;
+}
+
+// Remove the background color from the bootstrap-select.
+.open > .btn-default.dropdown-toggle,
+.open > .btn-default.dropdown-toggle:hover,
+.bootstrap-select .btn-default:hover,
+.bootstrap-select .btn-default:focus {
+  background-color: white;
 }
