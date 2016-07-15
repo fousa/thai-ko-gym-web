@@ -70,7 +70,7 @@ nl:
           personal: 'Persoonlijke gegevens'
           club: 'Club gegevens'
         alerts:
-          create: '%{name} is succesvol aangemaakt.'
+          new: '%{name} is succesvol aangemaakt.'
           edit: '%{name} is succesvol gewijzigd.'
           delete: '%{name} is succesvol verwijderd.'
       list:
