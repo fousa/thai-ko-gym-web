@@ -9,8 +9,6 @@ module UsersHelper
   end
 
   def active_tag(user)
-    if user.active?
-      content_tag :i, nil, class: 'fa fa-check-circle'
-    end
+    content_tag :i, nil, class: 'fa fa-check-circle' if user.active?
   end
 end

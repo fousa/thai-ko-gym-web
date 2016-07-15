@@ -2,15 +2,15 @@ module ApplicationHelper
   ### Actions
 
   def back_tag(path)
-    link_to path, class: "btn btn-circle btn-default" do
-      content = content_tag :i, nil, class: "fa fa-long-arrow-left"
+    link_to path, class: 'btn btn-circle btn-default' do
+      content = content_tag :i, nil, class: 'fa fa-long-arrow-left'
       content << " #{t('global.links.back')}"
       content
     end
   end
 
-  def add_tag(path, icon='plus')
-    link_to path, class: "btn btn-circle btn-default" do
+  def add_tag(path, icon = 'plus')
+    link_to path, class: 'btn btn-circle btn-default' do
       content = content_tag :i, nil, class: "fa fa-#{icon}"
       content << " #{t('global.links.add')}"
       content
@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def edit_tag(path)
-    link_to path, class: "btn btn-circle btn-sm btn-outline green" do
+    link_to path, class: 'btn btn-circle btn-sm btn-outline green' do
       content = content_tag :i, nil, class: 'fa fa-edit'
       content << " #{t('global.links.edit')}"
       content
@@ -26,7 +26,7 @@ module ApplicationHelper
   end
 
   def delete_tag(path, name)
-    link_to path, method: :delete, class: "btn btn-circle btn-sm btn-outline red", data: { confirm: t('global.labels.delete', name: name) } do
+    link_to path, method: :delete, class: 'btn btn-circle btn-sm btn-outline red', data: { confirm: t('global.labels.delete', name: name) } do
       content = content_tag :i, nil, class: 'fa fa-trash'
       content << " #{t('global.links.delete')}"
       content
