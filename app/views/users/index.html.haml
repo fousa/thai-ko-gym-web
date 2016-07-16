@@ -14,7 +14,6 @@
           %table.table.table-striped.table-bordered
             %thead
               %tr
-                %th{ style: 'width: 2em;' }
                 %th= t 'pages.users.list.labels.name'
                 %th= t 'pages.users.list.labels.city'
                 %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.sex'
@@ -23,8 +22,9 @@
             %tbody
               - @users.each do |user|
                 %tr{ class: user.active? ? nil : 'inactive' }
-                  %td= active_tag user
-                  %td= user.name
+                  %td
+                    = user.name
+                    = active_tag user
                   %td= user.city
                   %td= sex_tag user
                   %td= user.age
