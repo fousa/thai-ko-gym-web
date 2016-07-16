@@ -103,6 +103,10 @@ group :production, :staging do
 end
 
 group :test do
+  # Extracting `assigns` and `assert_template` from ActionDispatch.
+  # [rails-controller-testing](https://github.com/rails/rails-controller-testing)
+  gem "rails-controller-testing", "~> 0.1.1"
+
   # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
   # [faker](https://github.com/stympy/faker)
   gem "faker", "~> 1.6"
