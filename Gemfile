@@ -68,6 +68,10 @@ gem "country_select", "~> 2.5.2"
 # [enum_help]()
 gem "enum_help", "~> 0.0.15"
 
+# Faker, a port of Data::Faker from Perl, is used to easily generate fake data
+# [faker](https://github.com/stympy/faker)
+gem "faker", "~> 1.6"
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
@@ -106,10 +110,6 @@ group :test do
   # Extracting `assigns` and `assert_template` from ActionDispatch.
   # [rails-controller-testing](https://github.com/rails/rails-controller-testing)
   gem "rails-controller-testing", "~> 0.1.1"
-
-  # Faker, a port of Data::Faker from Perl, is used to easily generate fake data
-  # [faker](https://github.com/stympy/faker)
-  gem "faker", "~> 1.6"
 
   # rspec-rails is a testing framework for Rails 3.x and 4.x.
   # [rspec-rails](https://github.com/rspec/rspec-rails)
