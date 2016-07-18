@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  self.inheritance_column = 'another_type_column'
+
   ### Authentication
 
   devise :database_authenticatable,

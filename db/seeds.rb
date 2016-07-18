@@ -1,6 +1,3 @@
-return if User.count > 10
-puts 'Seeding data'
-
 20.times do
   User.create(
     first_name:   Faker::Name.first_name,
