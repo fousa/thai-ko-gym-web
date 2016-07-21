@@ -32,20 +32,17 @@
           .form-actions.hidden-xs.hidden-sm
             = f.button :submit, t('pages.profile.form.buttons.submit'), class: 'green'
 
-:javascript
-  $('.enum').selectpicker({
-    size: 5,
-    selectOnTab: true
-  });
-
-  $('.live').selectpicker({
-    liveSearch: true,
-    selectOnTab: true,
-    size: 5
-  });
-
-  $(".date-picker").datepicker({
-    orientation: "left",
-    autoclose: true,
-    format: "dd/mm/yyyy"
-  });
+    .col-md-6
+      .portlet.light
+        .portlet-title
+          .caption.font-green
+            %i.icon-bubble.font-green
+            %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.website'
+        .portlet-body.form
+          .form-body
+            .row
+              .col-md-12
+                = f.input :password,              required: false, autocomplete: false, autofocus: true, placeholder: t('pages.profile.form.labels.password')
+                = f.input :password_confirmation, required: false, autocomplete: false,                  placeholder: t('pages.profile.form.labels.password_confirmation')
+          .form-actions.visible-xs.visible-sm
+            = f.button :submit, t('pages.profile.form.buttons.submit'), class: 'green'

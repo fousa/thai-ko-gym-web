@@ -76,6 +76,9 @@ nl:
     profile:
       title: 'Profiel aanpassen'
       form:
+        labels:
+          password: 'Wachtwoord'
+          password_confirmation: 'Bevestig wachtwoord'
         buttons:
           submit: 'Profiel aanpassen'
         alerts:
