@@ -38,6 +38,13 @@
   color: #555555;
 }
 
+// Set the disabled select box background color.
+.mt-checkbox.mt-checkbox-outline > input:disabled ~ span,
+.country .dropdown-toggle.disabled,
+.enum .dropdown-toggle.disabled {
+  background-color: #eef1f5;
+}
+
 // Set the correct padding for required fields.
 .form-group input.required {
   padding-left: 12px;

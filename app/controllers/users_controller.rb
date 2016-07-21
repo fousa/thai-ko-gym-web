@@ -1,4 +1,7 @@
 class UsersController < ApplicationController
+  authorize_resource
+  skip_authorize_resource only: :edit
+
   before_action :authenticate_user!
   before_action :set_user, only: [:edit, :update, :destroy, :invite]
 

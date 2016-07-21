@@ -9,6 +9,7 @@ nl:
       back: 'Terug naar overzicht'
       add: 'Toevoegen'
       edit: 'Wijzig'
+      show: 'Bekijken'
       delete: 'Verwijder'
       invite: 'Stuur uitnodiging'
 
@@ -90,6 +91,7 @@ nl:
         titles:
           new: 'Lid aanmaken'
           edit: 'Lid wijzigen'
+          show: 'Lid bekijken'
         labels:
           personal: 'Persoonlijk'
           club: 'Club'

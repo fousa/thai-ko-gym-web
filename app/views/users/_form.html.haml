@@ -12,28 +12,29 @@
         .portlet-body.form
           .form-body
             .row
-              .col-md-6= f.input :first_name
-              .col-md-6= f.input :last_name
+              .col-md-6= f.input :first_name, disabled: cannot?(:manage, @user)
+              .col-md-6= f.input :last_name, disabled: cannot?(:manage, @user)
             .row
-              .col-md-6= f.input :birth_date, as: :string, input_html: { class: 'date-picker', value: @user.birth_date ? l(@user.birth_date) : nil }
-              .col-md-6= f.input :sex, prompt: :translate
+              .col-md-6= f.input :birth_date, as: :string, input_html: { class: 'date-picker', value: @user.birth_date ? l(@user.birth_date) : nil }, disabled: cannot?(:manage, @user)
+              .col-md-6= f.input :sex, prompt: :translate, disabled: cannot?(:manage, @user)
             .row
-              .col-md-12= f.input :email
+              .col-md-12= f.input :email, disabled: cannot?(:manage, @user)
             .row
-              .col-md-6= f.input :phone_number, as: :tel
+              .col-md-6= f.input :phone_number, as: :tel, disabled: cannot?(:manage, @user)
             %hr
             .row
-              .col-md-12= f.input :address
+              .col-md-12= f.input :address, disabled: cannot?(:manage, @user)
             .row
-              .col-md-3= f.input :postalcode
-              .col-md-9= f.input :city
+              .col-md-3= f.input :postalcode, disabled: cannot?(:manage, @user)
+              .col-md-9= f.input :city, disabled: cannot?(:manage, @user)
             .row
-              .col-md-12= f.input :country, prompt: :translate, input_html: { class: 'live' }
-          .form-actions.hidden-xs.hidden-sm
-            = f.button :submit, class: 'green'
-            - if !@user.email.blank? && @user != current_user
-              .pull-right
-                = invite_tag invite_user_path(@user), @user.name
+              .col-md-12= f.input :country, prompt: :translate, input_html: { class: 'live' }, disabled: cannot?(:manage, @user)
+          - if can? :manage, @user
+            .form-actions.hidden-xs.hidden-sm
+              = f.button :submit, class: 'green'
+              - if !@user.email.blank? && @user != current_user
+                .pull-right
+                  = invite_tag invite_user_path(@user), @user.name
 
     .col-md-6
       .portlet.light
@@ -44,16 +45,16 @@
         .portlet-body.form
           .row
             .col-md-6
-              = f.input :active
+              = f.input :active, disabled: cannot?(:manage, @user)
           %hr
           .row
-            .col-md-6= f.input :category, prompt: :translate
-            .col-md-6= f.input :type, prompt: :translate
+            .col-md-6= f.input :category, prompt: :translate, disabled: cannot?(:manage, @user)
+            .col-md-6= f.input :type, prompt: :translate, disabled: cannot?(:manage, @user)
           .row
-            .col-md-6= f.input :rankings, prompt: :translate
+            .col-md-6= f.input :rankings, prompt: :translate, disabled: cannot?(:manage, @user)
           %hr
           .row
-            .col-md-12= f.input :comments, input_html: { rows: 4 }
+            .col-md-12= f.input :comments, input_html: { rows: 4 }, disabled: cannot?(:manage, @user)
 
     .col-md-6
       .portlet.light
@@ -63,18 +64,19 @@
             %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.website'
         .portlet-body.form
           .row
-            .col-md-6= f.input :role, prompt: :translate, disabled: @user == current_user
+            .col-md-6= f.input :role, prompt: :translate, disabled: @user == current_user || cannot?(:manage, @user)
           .row
             .col-md-12
               - if @user.confirmed_at?
                 %p= t('pages.users.form.labels.confirmed_at', time: content_tag(:strong, time_ago_in_words(@user.confirmed_at))).html_safe
               - else
                 %p= t 'pages.users.form.labels.unconfirmed'
-          .form-actions.visible-xs.visible-sm
-            = f.button :submit, class: 'green'
-            - if !@user.email.blank? && @user != current_user
-              .pull-right
-                = invite_tag invite_user_path(@user), @user.name
+          - if can? :manage, @user
+            .form-actions.visible-xs.visible-sm
+              = f.button :submit, class: 'green'
+              - if !@user.email.blank? && @user != current_user
+                .pull-right
+                  = invite_tag invite_user_path(@user), @user.name
 
 :javascript
   $('.enum').selectpicker({

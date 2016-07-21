@@ -1,6 +1,7 @@
 - content_for :title, t('pages.users.list.title')
-- content_for :toolbar do
-  = add_tag new_user_path, 'user-plus'
+- if can? :manage, @user
+  - content_for :toolbar do
+    = add_tag new_user_path, 'user-plus'
 
 .row.listing
   .col-md-12
@@ -17,7 +18,10 @@
               %th= t 'pages.users.list.labels.city'
               %th{ style: 'width: 5em;' }= t 'pages.users.list.labels.sex'
               %th{ style: 'width: 5em;' }= t 'pages.users.list.labels.age'
-              %th{ style: 'width: 19em;' }
+              - if can? :manage, User
+                %th{ style: 'width: 19em;' }
+              - else
+                %th{ style: 'width: 5em;' }
           %tbody
             - @users.each do |user|
               %tr{ class: user.active? ? nil : 'inactive' }
@@ -28,9 +32,12 @@
                 %td= sex_tag user
                 %td= user.age
                 %td
-                  = edit_tag edit_user_path(user)
-                  - unless user == current_user
-                    = delete_tag user, user.name
+                  - if can?(:manage, user)
+                    = edit_tag edit_user_path(user)
+                    - unless user == current_user
+                      = delete_tag user, user.name
+                  - else
+                    = show_tag edit_user_path(user)
 
 :javascript
   $('.table').DataTable( {
