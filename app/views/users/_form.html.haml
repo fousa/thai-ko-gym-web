@@ -15,12 +15,12 @@
               .col-md-6= f.input :first_name
               .col-md-6= f.input :last_name
             .row
-              .col-md-6= f.input :birth_date, as: :string, input_html: { class: 'date-picker' }
+              .col-md-6= f.input :birth_date, as: :string, input_html: { class: 'date-picker', value: @user.birth_date ? l(@user.birth_date) : nil }
               .col-md-6= f.input :sex, prompt: :translate
             .row
               .col-md-12= f.input :email
             .row
-              .col-md-6= f.input :phone_number
+              .col-md-6= f.input :phone_number, as: :tel
             %hr
             .row
               .col-md-12= f.input :address
