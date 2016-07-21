@@ -63,6 +63,16 @@ nl:
       links:
         login: 'Inloggen'
 
+    confirmation:
+      title: 'Account bevestigen'
+      placeholders:
+        password: 'Wachtwoord'
+        password_confirmation: 'Bevestig wachtwoord'
+      buttons:
+        submit: 'Bevestig account'
+      links:
+        login: 'Inloggen'
+
     users:
       form:
         titles:

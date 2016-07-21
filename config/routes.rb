@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   ### Setup Devise
-  devise_for :users
+  as :user do
+    patch '/users/confirmation' => 'confirmations#update', as: :update_user_confirmation, via: :patch
+  end
+  devise_for :users, controllers: { confirmations: 'confirmations' }
 
   ### Home
   authenticated :user do
