@@ -70,6 +70,9 @@
                 %p= t 'pages.users.form.labels.unconfirmed'
           .form-actions.visible-xs.visible-sm
             = f.button :submit, class: 'green'
+            - if !@user.email.blank? && @user != current_user
+              .pull-right
+                = invite_tag invite_user_path(@user), @user.name
 
 :javascript
   $('.enum').selectpicker({
