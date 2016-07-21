@@ -1,0 +1,52 @@
+- if @user.errors.count > 0
+  .row
+    .col-md-6
+      .alert.alert-danger
+        %span= t 'simple_form.error_notification.default_message'
+
+.row
+  .col-md-6
+    .portlet.light
+      .portlet-title
+        .caption.font-green
+          %i.icon-bubble.font-green
+          %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.personal'
+      .portlet-body.form
+        = simple_form_for @user, url: profile_path do |f|
+          .form-body
+            .row
+              .col-md-6= f.input :first_name
+              .col-md-6= f.input :last_name
+            .row
+              .col-md-6= f.input :birth_date, as: :string, input_html: { class: 'date-picker', value: @user.birth_date ? l(@user.birth_date) : nil }
+              .col-md-6= f.input :sex, prompt: :translate
+            .row
+              .col-md-12= f.input :email
+            .row
+              .col-md-6= f.input :phone_number, as: :tel
+            %hr
+            .row
+              .col-md-12= f.input :address
+            .row
+              .col-md-3= f.input :postalcode
+              .col-md-9= f.input :city
+            .row
+              .col-md-12= f.input :country, prompt: :translate, input_html: { class: 'live' }
+          .form-actions
+            = f.button :submit, t('pages.profile.form.buttons.submit'), class: 'green'
+
+  .col-md-6
+    .portlet.light
+      .portlet-title
+        .caption.font-green
+          %i.icon-bubble.font-green
+          %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.website'
+      .portlet-body.form
+        = simple_form_for @user, url: profile_path do |f|
+          .form-body
+            .row
+              .col-md-12
+                = f.input :password,              required: false, autocomplete: false, autofocus: true, placeholder: t('pages.profile.form.labels.password')
+                = f.input :password_confirmation, required: false, autocomplete: false,                  placeholder: t('pages.profile.form.labels.password_confirmation')
+          .form-actions
+            = f.button :submit, t('pages.profile.form.buttons.password'), class: 'green'

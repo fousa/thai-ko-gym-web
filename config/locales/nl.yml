@@ -73,6 +73,18 @@ nl:
       links:
         login: 'Inloggen'
 
+    profile:
+      title: 'Profiel aanpassen'
+      form:
+        labels:
+          password: 'Wachtwoord'
+          password_confirmation: 'Bevestig wachtwoord'
+        buttons:
+          submit: 'Profiel aanpassen'
+          password: 'Wachtwoord wijzigen'
+        alerts:
+          edit: 'Jouw profiel is succesvol gewijzigd.'
+
     users:
       form:
         titles:

@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     end
   end
 
+  ### profile
+  resource :profile, only: [:show, :edit, :update]
+
   # Set the root url
   root to: redirect('/users/sign_in')
 end
