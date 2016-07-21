@@ -75,6 +75,7 @@ nl:
           new: '%{name} is succesvol aangemaakt.'
           edit: '%{name} is succesvol gewijzigd.'
           delete: '%{name} is succesvol verwijderd.'
+          invite: 'Er werd een uitnodiging verstuurd naar %{name}.'
       list:
         title: 'Ledenlijst'
         labels:
