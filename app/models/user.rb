@@ -38,6 +38,18 @@ class User < ApplicationRecord
     now.year - birth_date.year - (birth_date.to_date.change(year: now.year) > now ? 1 : 0)
   end
 
+  ### CanCanCan
+
+  def ability
+    @ability ||= Ability.new(self)
+  end
+
+  delegate :can?, :cannot?, to: :ability
+
+  def active_for_authentication?
+    super && can?(:login, User)
+  end
+
   ### Devise
 
   def password_required?
