@@ -63,6 +63,8 @@
             %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.website'
         .portlet-body.form
           .row
+            .col-md-6= f.input :role, prompt: :translate
+          .row
             .col-md-12
               - if @user.confirmed_at?
                 %p= t('pages.users.form.labels.confirmed_at', time: content_tag(:strong, time_ago_in_words(@user.confirmed_at))).html_safe

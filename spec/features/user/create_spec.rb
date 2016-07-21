@@ -16,6 +16,7 @@ describe 'create', type: :feature do
     fill_in 'user_first_name', with: 'Jake'
     fill_in 'user_last_name', with: 'Snake'
     select 'Man', from: 'user_sex'
+    select 'Lid', from: 'user_role'
     within first('.portlet') do
       click_button 'Lid toevoegen'
     end

@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   ### Enums
 
+  enum role: [:member, :teacher, :admin]
   enum sex: [:m, :w]
   enum category: [:youth, :adults]
   enum type: [:competition, :amateur]
@@ -22,6 +23,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name,  presence: true
   validates :sex,        presence: true
+  validates :role,       presence: true
 
   ### Utilities
 

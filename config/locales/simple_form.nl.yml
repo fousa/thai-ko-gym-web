@@ -28,5 +28,6 @@ nl:
         sex: 'Selecteer het geslacht'
         country: 'Selecteer het land'
         category: 'Selecteer een categorie'
+        role: 'Selecteer een rol'
         type: 'Selecteer een type'
         rankings: 'Selecteer een ranking'

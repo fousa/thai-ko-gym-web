@@ -4,6 +4,10 @@ nl:
       sex:
         m: 'Man'
         w: 'Vrouw'
+      role:
+        member: 'Lid'
+        teacher: 'Trainer'
+        admin: 'Administrator'
       category:
         youth: 'Jeugd'
         adults: 'Volwassenen'

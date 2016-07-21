@@ -36,7 +36,7 @@ describe UsersController do
     before { sign_in create(:user) }
     let(:user) { create(:user) }
 
-    it { should permit(:first_name, :email, :last_name, :sex, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country).for(:create, params: { user: { first_name: '' } }).on(:user) }
-    it { should permit(:first_name, :email, :last_name, :sex, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country).for(:update, params: { id: user.id, user: { first_name: '' } }).on(:user) }
+    it { should permit(:first_name, :email, :role, :last_name, :sex, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country).for(:create, params: { user: { first_name: '' } }).on(:user) }
+    it { should permit(:first_name, :email, :role, :last_name, :sex, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country).for(:update, params: { id: user.id, user: { first_name: '' } }).on(:user) }
   end
 end
