@@ -11,8 +11,8 @@ class ProfilesController < ApplicationController
 
   def update
     if @user.update(update_params)
-      sign_in @user, bypass: true
-      redirect_to edit_profile_path, notice: t('pages.profiles.labels.notices.update')
+      bypass_sign_in @user
+      redirect_to edit_profile_path, notice: t('pages.profile.form.alerts.edit')
     else
       render :edit
     end
@@ -25,6 +25,6 @@ class ProfilesController < ApplicationController
   end
 
   def update_params
-    params.require(:pilot).permit(:email, :first_name, :last_name, :password, :password_confirmation)
+    params.require(:user).permit(:email, :first_name, :last_name, :sex, :birth_date, :phone, :address, :postalcode, :city, :country, :password, :password_confirmation)
   end
 end

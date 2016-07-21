@@ -75,6 +75,11 @@ nl:
 
     profile:
       title: 'Profiel aanpassen'
+      form:
+        buttons:
+          submit: 'Profiel aanpassen'
+        alerts:
+          edit: 'Jouw profiel is succesvol gewijzigd.'
 
     users:
       form:
