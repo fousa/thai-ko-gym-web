@@ -4,6 +4,8 @@ describe 'edit', type: :feature do
   before do
     login_as_user
     @edit_user = create(:user)
+
+    clear_emails
     visit edit_user_path(@edit_user)
   end
 
@@ -19,6 +21,7 @@ describe 'edit', type: :feature do
 
     expect(page).to have_content('is succesvol gewijzigd.')
     expect(User.find(@edit_user.id).first_name).to eq('Jake')
+    expect(current_email).to be_nil
   end
 
   it 'should fail to edit a new user' do
