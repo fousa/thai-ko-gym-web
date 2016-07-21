@@ -25,6 +25,14 @@ module ApplicationHelper
     end
   end
 
+  def invite_tag(path, name)
+    link_to path, class: 'btn btn-circle btn-sm btn-outline blue', data: { confirm: t('global.labels.invite', name: name) } do
+      content = content_tag :i, nil, class: 'fa fa-envelope'
+      content << " #{t('global.links.invite')}"
+      content
+    end
+  end
+
   def delete_tag(path, name)
     link_to path, method: :delete, class: 'btn btn-circle btn-sm btn-outline red', data: { confirm: t('global.labels.delete', name: name) } do
       content = content_tag :i, nil, class: 'fa fa-trash'

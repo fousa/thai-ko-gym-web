@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   end
 
   ### users
-  resources :users
+  resources :users do
+    member do
+      post :invite
+    end
+  end
 
   # Set the root url
   root to: redirect('/users/sign_in')

@@ -4,11 +4,13 @@ nl:
     footer: '%{year} © Crafted by %{author}'
     labels:
       delete: 'Ben je zeker dat je %{name} wil verwijderen?'
+      invite: 'Ben je zeker dat je %{name} wil uitnodigen om toegang te geven tot deze website?'
     links:
       back: 'Terug naar overzicht'
       add: 'Toevoegen'
       edit: 'Wijzig'
       delete: 'Verwijder'
+      invite: 'Uitnodigen'
 
   menu:
     edit_profile: 'Profiel aanpassen'
