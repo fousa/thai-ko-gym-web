@@ -79,8 +79,11 @@ nl:
           new: 'Lid aanmaken'
           edit: 'Lid wijzigen'
         labels:
-          personal: 'Persoonlijke gegevens'
-          club: 'Club gegevens'
+          personal: 'Persoonlijk'
+          club: 'Club'
+          website: 'Website'
+          confirmed_at: 'De account werd %{time} geleden geactiveerd.'
+          unconfirmed: 'De account werd nog niet geactiveerd.'
         alerts:
           new: '%{name} is succesvol aangemaakt.'
           edit: '%{name} is succesvol gewijzigd.'
