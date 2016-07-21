@@ -31,6 +31,9 @@
               .col-md-12= f.input :country, prompt: :translate, input_html: { class: 'live' }
           .form-actions.hidden-sm
             = f.button :submit, class: 'green'
+            - if !@user.email.blank? && @user != current_user
+              .pull-right
+                = invite_tag invite_user_path(@user), @user.name
 
     .col-md-6
       .portlet.light

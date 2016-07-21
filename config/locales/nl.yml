@@ -10,7 +10,7 @@ nl:
       add: 'Toevoegen'
       edit: 'Wijzig'
       delete: 'Verwijder'
-      invite: 'Uitnodigen'
+      invite: 'Stuur uitnodiging'
 
   menu:
     edit_profile: 'Profiel aanpassen'

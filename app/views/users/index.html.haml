@@ -28,8 +28,6 @@
                 %td= sex_tag user
                 %td= user.age
                 %td
-                  - if !user.email.blank? && user != current_user
-                    = invite_tag invite_user_path(user), user.name
                   = edit_tag edit_user_path(user)
                   - unless user == current_user
                     = delete_tag user, user.name

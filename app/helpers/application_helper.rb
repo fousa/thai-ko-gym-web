@@ -26,9 +26,9 @@ module ApplicationHelper
   end
 
   def invite_tag(path, name)
-    link_to path, class: 'btn btn-circle btn-sm btn-outline blue', data: { confirm: t('global.labels.invite', name: name) } do
+    link_to path, class: 'btn default', data: { confirm: t('global.labels.invite', name: name) } do
       content = content_tag :i, nil, class: 'fa fa-envelope'
-      content << " #{t('global.links.invite')}"
+      content << " #{t('global.links.invite').upcase}"
       content
     end
   end
