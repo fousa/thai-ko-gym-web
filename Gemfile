@@ -72,6 +72,10 @@ gem "enum_help", "~> 0.0.15"
 # [faker](https://github.com/stympy/faker)
 gem "faker", "~> 1.6"
 
+# Continuation of the simple authorization solution for Rails which is decoupl
+# [cancancan](https://github.com/CanCanCommunity/cancancan)
+gem "cancancan", "~> 1.15.0"
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
