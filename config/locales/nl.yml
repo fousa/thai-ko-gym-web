@@ -73,6 +73,9 @@ nl:
       links:
         login: 'Inloggen'
 
+    profile:
+      title: 'Profiel aanpassen'
+
     users:
       form:
         titles:
