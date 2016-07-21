@@ -9,7 +9,6 @@ class Ability
     can :read, User
 
     return if user.teacher?
-    can :invite, User
     can :manage, User
   end
 end
