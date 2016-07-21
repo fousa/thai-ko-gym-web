@@ -63,7 +63,7 @@
             %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.website'
         .portlet-body.form
           .row
-            .col-md-6= f.input :role, prompt: :translate
+            .col-md-6= f.input :role, prompt: :translate, disabled: @user == current_user
           .row
             .col-md-12
               - if @user.confirmed_at?
