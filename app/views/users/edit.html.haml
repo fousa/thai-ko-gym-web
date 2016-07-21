@@ -1,7 +1,4 @@
-- if can?(:manage, @user)
-  - content_for :title, t('pages.users.form.titles.edit')
-- else
-  - content_for :title, t('pages.users.form.titles.show')
+- content_for :title, t('pages.users.form.titles.edit')
 
 - content_for :toolbar do
   = back_tag users_path

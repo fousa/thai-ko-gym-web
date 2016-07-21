@@ -1,16 +1,14 @@
 class UsersController < ApplicationController
   authorize_resource
-  skip_authorize_resource only: :edit
 
   before_action :authenticate_user!
-  before_action :set_user, only: [:edit, :update, :destroy, :invite]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :invite]
 
   def index
     @users = User.all
   end
 
   def show
-    redirect_to edit_user_path(params[:id])
   end
 
   def new
