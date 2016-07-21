@@ -4,11 +4,13 @@ nl:
     footer: '%{year} © Crafted by %{author}'
     labels:
       delete: 'Ben je zeker dat je %{name} wil verwijderen?'
+      invite: 'Ben je zeker dat je %{name} wil uitnodigen om toegang te geven tot deze website?'
     links:
       back: 'Terug naar overzicht'
       add: 'Toevoegen'
       edit: 'Wijzig'
       delete: 'Verwijder'
+      invite: 'Stuur uitnodiging'
 
   menu:
     edit_profile: 'Profiel aanpassen'
@@ -61,18 +63,32 @@ nl:
       links:
         login: 'Inloggen'
 
+    confirmation:
+      title: 'Account bevestigen'
+      placeholders:
+        password: 'Wachtwoord'
+        password_confirmation: 'Bevestig wachtwoord'
+      buttons:
+        submit: 'Bevestig account'
+      links:
+        login: 'Inloggen'
+
     users:
       form:
         titles:
           new: 'Lid aanmaken'
           edit: 'Lid wijzigen'
         labels:
-          personal: 'Persoonlijke gegevens'
-          club: 'Club gegevens'
+          personal: 'Persoonlijk'
+          club: 'Club'
+          website: 'Website'
+          confirmed_at: 'De account werd %{time} geleden geactiveerd.'
+          unconfirmed: 'De account werd nog niet geactiveerd.'
         alerts:
           new: '%{name} is succesvol aangemaakt.'
           edit: '%{name} is succesvol gewijzigd.'
           delete: '%{name} is succesvol verwijderd.'
+          invite: 'Er werd een uitnodiging verstuurd naar %{name}.'
       list:
         title: 'Ledenlijst'
         labels:

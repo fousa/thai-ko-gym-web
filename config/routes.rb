@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   ### Setup Devise
-  devise_for :users
+  as :user do
+    patch '/users/confirmation' => 'confirmations#update', as: :update_user_confirmation, via: :patch
+  end
+  devise_for :users, controllers: { confirmations: 'confirmations' }
 
   ### Home
   authenticated :user do
@@ -9,7 +12,11 @@ Rails.application.routes.draw do
   end
 
   ### users
-  resources :users
+  resources :users do
+    member do
+      post :invite
+    end
+  end
 
   # Set the root url
   root to: redirect('/users/sign_in')

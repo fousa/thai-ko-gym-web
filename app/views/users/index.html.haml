@@ -10,28 +10,27 @@
           %i.fa.fa-list.font-green
           = t 'pages.users.list.labels.overview'
       .portlet-body
-        .table-responsive
-          %table.table.table-striped.table-bordered
-            %thead
-              %tr
-                %th= t 'pages.users.list.labels.name'
-                %th= t 'pages.users.list.labels.city'
-                %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.sex'
-                %th{ style: 'width: 8em;' }= t 'pages.users.list.labels.age'
-                %th{ style: 'width: 11em;' }
-            %tbody
-              - @users.each do |user|
-                %tr{ class: user.active? ? nil : 'inactive' }
-                  %td
-                    = user.name
-                    = active_tag user
-                  %td= user.city
-                  %td= sex_tag user
-                  %td= user.age
-                  %td
-                    = edit_tag edit_user_path(user)
-                    - unless user == current_user
-                      = delete_tag user, user.name
+        %table.table.table-striped.table-bordered
+          %thead
+            %tr
+              %th= t 'pages.users.list.labels.name'
+              %th= t 'pages.users.list.labels.city'
+              %th{ style: 'width: 5em;' }= t 'pages.users.list.labels.sex'
+              %th{ style: 'width: 5em;' }= t 'pages.users.list.labels.age'
+              %th{ style: 'width: 19em;' }
+          %tbody
+            - @users.each do |user|
+              %tr{ class: user.active? ? nil : 'inactive' }
+                %td
+                  = user.name
+                  = active_tag user
+                %td= user.city
+                %td= sex_tag user
+                %td= user.age
+                %td
+                  = edit_tag edit_user_path(user)
+                  - unless user == current_user
+                    = delete_tag user, user.name
 
 :javascript
   $('.table').DataTable( {

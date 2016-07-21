@@ -1,0 +1,15 @@
+= simple_form_for(resource, as: resource_name, url: update_user_confirmation_path, html: { method: 'patch' }, wrapper: 'login_form') do |f|
+  = hidden_field_tag :confirmation_token, @confirmation_token
+
+  %h3.form-title.font-green= t 'pages.confirmation.title'
+  - if resource.errors.count > 0
+    .alert.alert-danger
+      - resource.errors.full_messages.each do |message|
+        %span= message
+
+  = f.input :password,              required: false, autocomplete: false, autofocus: true, placeholder: t('pages.confirmation.placeholders.password')
+  = f.input :password_confirmation, required: false, autocomplete: false,                  placeholder: t('pages.confirmation.placeholders.password_confirmation')
+
+  .form-actions
+    = f.button :submit, t('pages.confirmation.buttons.submit'), class: 'green uppercase'
+    = link_to t('pages.confirmation.links.login'), new_session_path(resource_name), class: 'forget-password'

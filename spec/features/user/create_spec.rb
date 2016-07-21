@@ -3,6 +3,8 @@ require 'rails_helper.rb'
 describe 'create', type: :feature do
   before do
     login_as_user
+
+    clear_emails
     visit new_user_path
   end
 
@@ -20,6 +22,7 @@ describe 'create', type: :feature do
 
     expect(page).to have_content('is succesvol aangemaakt.')
     expect(User.count).to eq(2)
+    expect(current_email).to be_nil
   end
 
   it 'should fail to create a new user' do

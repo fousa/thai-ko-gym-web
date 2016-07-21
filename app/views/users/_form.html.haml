@@ -29,8 +29,11 @@
               .col-md-9= f.input :city
             .row
               .col-md-12= f.input :country, prompt: :translate, input_html: { class: 'live' }
-          .form-actions.hidden-sm
+          .form-actions.hidden-xs.hidden-sm
             = f.button :submit, class: 'green'
+            - if !@user.email.blank? && @user != current_user
+              .pull-right
+                = invite_tag invite_user_path(@user), @user.name
 
     .col-md-6
       .portlet.light
@@ -40,7 +43,8 @@
             %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.club'
         .portlet-body.form
           .row
-            .col-md-6= f.input :active
+            .col-md-6
+              = f.input :active
           %hr
           .row
             .col-md-6= f.input :category, prompt: :translate
@@ -50,16 +54,35 @@
           %hr
           .row
             .col-md-12= f.input :comments, input_html: { rows: 4 }
-          .form-actions.visible-sm
+
+    .col-md-6
+      .portlet.light
+        .portlet-title
+          .caption.font-green
+            %i.icon-bubble.font-green
+            %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.website'
+        .portlet-body.form
+          .row
+            .col-md-12
+              - if @user.confirmed_at?
+                %p= t('pages.users.form.labels.confirmed_at', time: content_tag(:strong, time_ago_in_words(@user.confirmed_at))).html_safe
+              - else
+                %p= t 'pages.users.form.labels.unconfirmed'
+          .form-actions.visible-xs.visible-sm
             = f.button :submit, class: 'green'
+            - if !@user.email.blank? && @user != current_user
+              .pull-right
+                = invite_tag invite_user_path(@user), @user.name
 
 :javascript
   $('.enum').selectpicker({
-    size: 5
+    size: 5,
+    selectOnTab: true
   });
 
   $('.live').selectpicker({
     liveSearch: true,
+    selectOnTab: true,
     size: 5
   });
 

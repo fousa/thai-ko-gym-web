@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :authenticate_user!
-  before_action :set_user, only: [:edit, :update, :destroy]
+  before_action :set_user, only: [:edit, :update, :destroy, :invite]
 
   def index
     @users = User.all
@@ -19,6 +19,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.skip_confirmation_notification!
     if @user.save
       redirect_to edit_user_path(@user), notice: I18n.t('pages.users.form.alerts.new', name: @user.name)
     else
@@ -27,6 +28,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user.skip_confirmation_notification!
     if @user.update(user_params)
       redirect_to edit_user_path(@user), notice: I18n.t('pages.users.form.alerts.edit', name: @user.name)
     else
@@ -39,6 +41,11 @@ class UsersController < ApplicationController
     redirect_to users_url, notice: I18n.t('pages.users.form.alerts.delete', name: @user.name)
   end
 
+  def invite
+    @user.send_confirmation_instructions
+    redirect_to edit_user_path(@user), notice: I18n.t('pages.users.form.alerts.invite', name: @user.name)
+  end
+
   private
 
   def set_user
@@ -46,6 +53,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :sex, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country)
+    params.require(:user).permit(:first_name, :last_name, :sex, :email, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country)
   end
 end
