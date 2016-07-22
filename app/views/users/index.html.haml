@@ -34,7 +34,7 @@
                     - unless user == current_user
                       = delete_tag user, user.name
                   - else
-                    = show_tag edit_user_path(user)
+                    = show_tag user
 
 :javascript
   $('.table').DataTable( {
