@@ -7,6 +7,8 @@ class Ability
     return if user.member?
     can :login, User
     can :read, User
+    can :active, User
+    can :inactive, User
 
     return if user.teacher?
     can :manage, User
