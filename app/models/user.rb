@@ -18,6 +18,16 @@ class User < ApplicationRecord
   enum type: [:competition, :amateur]
   enum rankings: [:a, :b, :c, :d, :j]
 
+  ### scope
+
+  scope :search, lambda { |query|
+    searchable_fields = %w(first_name last_name city)
+    where_query = searchable_fields.map { |f| "LOWER(#{f}) LIKE ?" }
+    where_query = where_query.join(' OR ')
+    value_query = searchable_fields.map { |_f| "%#{query.try(:downcase)}%" }
+    where(where_query, *value_query)
+  }
+
   ### Validations
 
   validates :first_name, presence: true

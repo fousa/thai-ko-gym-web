@@ -1,5 +1,5 @@
 - content_for :title, t('pages.users.list.title')
-- if can? :manage, @user
+- if can? :manage, User
   - content_for :toolbar do
     = add_tag new_user_path, 'user-plus'
 
@@ -10,6 +10,11 @@
         .caption.font-green
           %i.fa.fa-list.font-green
           = t 'pages.users.list.labels.overview'
+        .actions
+          = form_tag users_path, method: :get do
+            %label{ for: 'search' }
+              Zoeken:&nbsp;
+              %input.form-control.input-sm.input-small.input-inline{ type: 'search', id: 'search', name: 'search', value: params[:search], autofocus: true }
       .portlet-body
         .table-responsive
           %table.table.table-striped.table-bordered.dataTable
