@@ -7,7 +7,7 @@ class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @users = User.order("#{sort_column} #{sort_direction}")
+    @users = User.order("#{sort_column} #{sort_direction}").page params[:page]
   end
 
   def show

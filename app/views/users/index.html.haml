@@ -36,3 +36,5 @@
                         = delete_tag user, user.name
                     - else
                       = show_tag user
+
+          .pull-right= paginate @users, theme: 'twitter-bootstrap-3'
