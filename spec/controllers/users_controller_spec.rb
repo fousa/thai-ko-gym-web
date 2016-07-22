@@ -16,12 +16,12 @@ describe UsersController do
   end
 
   context 'Authenticated' do
-    before { sign_in create(:user) }
+    before { sign_in create(:user, role: :admin) }
     let(:user) { create(:user) }
 
     it { should render_template_name('index') { get :index } }
     it { should render_template_name('new') { get :new } }
-    it { should redirect_to_path(edit_user_path(user.id)) { get :show, params: { id: user.id } } }
+    it { should render_template_name('show') { get :show, params: { id: user.id } } }
     it { should render_template_name('edit') { get :edit, params: { id: user.id } } }
 
     it { should render_template_name('new') { post :create, params: { user: { first_name: nil } } } }
@@ -33,7 +33,7 @@ describe UsersController do
   end
 
   context 'Strong params' do
-    before { sign_in create(:user) }
+    before { sign_in create(:user, role: :admin) }
     let(:user) { create(:user) }
 
     it { should permit(:first_name, :email, :role, :last_name, :sex, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country).for(:create, params: { user: { first_name: '' } }).on(:user) }
