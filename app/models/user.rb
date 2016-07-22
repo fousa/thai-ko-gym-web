@@ -20,6 +20,8 @@ class User < ApplicationRecord
 
   ### scope
 
+  scope :active, -> { where(active: true) }
+  scope :inactive, -> { where(active: false) }
   scope :search, lambda { |query|
     searchable_fields = %w(first_name last_name city)
     where_query = searchable_fields.map { |f| "LOWER(#{f}) LIKE ?" }

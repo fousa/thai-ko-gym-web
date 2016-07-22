@@ -10,6 +10,16 @@ class UsersController < ApplicationController
     @users = User.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
   end
 
+  def active
+    @users = User.active.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
+    render :index
+  end
+
+  def inactive
+    @users = User.inactive.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
+    render :index
+  end
+
   def show
   end
 
