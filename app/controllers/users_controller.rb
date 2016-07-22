@@ -4,8 +4,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy, :invite]
 
+  helper_method :sort_column, :sort_direction
+
   def index
-    @users = User.all
+    @users = User.order("#{sort_column} #{sort_direction}")
   end
 
   def show
@@ -55,5 +57,19 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:first_name, :role, :last_name, :sex, :email, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country)
+  end
+
+  ### sorting
+
+  def sortable_columns
+    %w(first_name sex birth_date city)
+  end
+
+  def sort_column
+    sortable_columns.include?(params[:column]) ? params[:column] : 'first_name'
+  end
+
+  def sort_direction
+    %w(asc desc).include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end

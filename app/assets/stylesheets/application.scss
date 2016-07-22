@@ -38,6 +38,16 @@
   color: #555555;
 }
 
+// Don't make the links blue in the table sorting headers.
+.dataTable th a {
+  color: black;
+}
+
+// Don't underline the links in the table sorting headers.
+.dataTable th a:hover {
+  text-decoration: none;
+}
+
 // Set the correct padding for required fields.
 .form-group input.required {
   padding-left: 12px;
