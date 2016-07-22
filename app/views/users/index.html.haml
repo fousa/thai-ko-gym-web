@@ -17,16 +17,16 @@
               %tr
                 = sort_tag 'first_name', t('pages.users.list.labels.name')
                 = sort_tag 'city', t('pages.users.list.labels.city')
+                = sort_tag 'active', t('pages.users.list.labels.active'), style: 'width: 5em;'
                 = sort_tag 'sex', t('pages.users.list.labels.sex'), style: 'width: 5em;'
                 = sort_tag 'birth_date', t('pages.users.list.labels.age'), style: 'width: 5em;'
                 %th{ style: 'width: 19em;' }
             %tbody
               - @users.each do |user|
                 %tr{ class: user.active? ? nil : 'inactive' }
-                  %td
-                    = user.name
-                    = active_tag user
+                  %td= user.name
                   %td= user.city
+                  %td= active_tag user
                   %td= sex_tag user
                   %td= user.age
                   %td

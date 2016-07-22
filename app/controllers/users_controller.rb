@@ -62,7 +62,7 @@ class UsersController < ApplicationController
   ### sorting
 
   def sortable_columns
-    %w(first_name sex birth_date city)
+    %w(first_name sex birth_date city active)
   end
 
   def sort_column
