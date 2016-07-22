@@ -9,3 +9,4 @@ Rails.application.config.assets.precompile << /\.(?:svg|eot|woff|ttf)$/
 
 # Extra layouts.
 Rails.application.config.assets.precompile += %w( devise.css devise.js )
+Rails.application.config.assets.precompile += %w( errors.css )
