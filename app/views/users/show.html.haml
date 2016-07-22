@@ -68,16 +68,16 @@
             .col-md-6
               %p= t 'activerecord.attributes.user.category'
               %p
-                %strong= t "enums.user.category.#{@user.category}"
+                %strong= @user.category ? t("enums.user.category.#{@user.category}") : ''
             .col-md-6
               %p= t 'activerecord.attributes.user.type'
               %p
-                %strong= t "enums.user.type.#{@user.type}"
+                %strong=  @user.type ? t("enums.user.type.#{@user.type}") : ''
           .row
             .col-md-6
               %p= t 'activerecord.attributes.user.rankings'
               %p
-                %strong= t "enums.user.rankings.#{@user.rankings}"
+                %strong= @user.rankings ? t("enums.user.rankings.#{@user.rankings}") : ''
           %hr
           .row
             .col-md-6
