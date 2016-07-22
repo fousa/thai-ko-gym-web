@@ -1,5 +1,5 @@
 %h1= @status_code
-%h2 Houston we have a problem!
-%p= t 'global.errors.labels.advise'
+%h2= t 'pages.error.title'
+%p= t "pages.error.labels.#{@status_code}"
 
-%p= link_to t('global.errors.links.dashboard'), root_path, class: 'btn red btn-outline'
+%p= link_to t('pages.error.links.home'), root_path, class: 'btn red btn-outline'
