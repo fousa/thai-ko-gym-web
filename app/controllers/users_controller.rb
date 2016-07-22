@@ -1,13 +1,14 @@
 class UsersController < ApplicationController
+  authorize_resource
+
   before_action :authenticate_user!
-  before_action :set_user, only: [:edit, :update, :destroy, :invite]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :invite]
 
   def index
     @users = User.all
   end
 
   def show
-    redirect_to edit_user_path(params[:id])
   end
 
   def new
@@ -53,6 +54,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:first_name, :last_name, :sex, :email, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country)
+    params.require(:user).permit(:first_name, :role, :last_name, :sex, :email, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country)
   end
 end

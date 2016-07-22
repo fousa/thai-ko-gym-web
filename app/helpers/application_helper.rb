@@ -17,8 +17,17 @@ module ApplicationHelper
     end
   end
 
-  def edit_tag(path)
-    link_to path, class: 'btn btn-circle btn-sm btn-outline green' do
+  def show_tag(path)
+    link_to path, class: 'btn btn-circle btn-sm btn-outline blue' do
+      content = content_tag :i, nil, class: 'fa fa-eye'
+      content << " #{t('global.links.show')}"
+      content
+    end
+  end
+
+  def edit_tag(path, options = {})
+    options = { class: 'btn btn-circle btn-sm btn-outline green' }.merge options
+    link_to path, options do
       content = content_tag :i, nil, class: 'fa fa-edit'
       content << " #{t('global.links.edit')}"
       content

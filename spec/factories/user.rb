@@ -3,6 +3,7 @@ FactoryGirl.define do
     first_name { Faker::Name.name }
     last_name { Faker::Name.name }
     sex { User.sexes.keys.sample }
+    role { User.roles.keys.sample }
 
     factory :user_with_password do
       email { Faker::Internet.email }
@@ -12,6 +13,7 @@ FactoryGirl.define do
       password_confirmation some_password
 
       confirmed_at Time.now
+      role :admin
     end
   end
 end

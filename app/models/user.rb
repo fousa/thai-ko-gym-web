@@ -12,6 +12,7 @@ class User < ApplicationRecord
 
   ### Enums
 
+  enum role: [:member, :teacher, :admin]
   enum sex: [:m, :w]
   enum category: [:youth, :adults]
   enum type: [:competition, :amateur]
@@ -22,6 +23,7 @@ class User < ApplicationRecord
   validates :first_name, presence: true
   validates :last_name,  presence: true
   validates :sex,        presence: true
+  validates :role,       presence: true
 
   ### Utilities
 
@@ -34,6 +36,23 @@ class User < ApplicationRecord
 
     now = Time.now.utc.to_date
     now.year - birth_date.year - (birth_date.to_date.change(year: now.year) > now ? 1 : 0)
+  end
+
+  def country_name
+    country_name = ISO3166::Country[country]
+    country_name.translations[I18n.locale.to_s] || country_name.name
+  end
+
+  ### CanCanCan
+
+  def ability
+    @ability ||= Ability.new(self)
+  end
+
+  delegate :can?, :cannot?, to: :ability
+
+  def active_for_authentication?
+    super && can?(:login, User)
   end
 
   ### Devise

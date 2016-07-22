@@ -9,6 +9,7 @@ nl:
       back: 'Terug naar overzicht'
       add: 'Toevoegen'
       edit: 'Wijzig'
+      show: 'Bekijken'
       delete: 'Verwijder'
       invite: 'Stuur uitnodiging'
 
@@ -34,6 +35,17 @@ nl:
 
 
   pages:
+    error:
+      title: 'Houston, we have a problem!'
+      labels:
+        '404': 'De pagina werd niet gevonden.'
+        '403': 'Je hebt geen toegang tot deze pagina.'
+        '422': 'Er deed zich een probleem voor tijdens het verwerken van de data, contacteer de ontwikkelaar voor ondersteuning.'
+        '500': 'Er deed zich een onverwachte fout voor, contacteer de ontwikkelaar voor ondersteuning.'
+        '503': 'De website is momenteel onbeschikbaar.'
+      links:
+        home: 'GA TERUG NAAR DE WEBSITE'
+
     login:
       title: 'Inloggen'
       placeholders:
@@ -90,6 +102,7 @@ nl:
         titles:
           new: 'Lid aanmaken'
           edit: 'Lid wijzigen'
+          show: 'Lid bekijken'
         labels:
           personal: 'Persoonlijk'
           club: 'Club'

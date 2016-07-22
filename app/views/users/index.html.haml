@@ -1,6 +1,7 @@
 - content_for :title, t('pages.users.list.title')
-- content_for :toolbar do
-  = add_tag new_user_path, 'user-plus'
+- if can? :manage, @user
+  - content_for :toolbar do
+    = add_tag new_user_path, 'user-plus'
 
 .row.listing
   .col-md-12
@@ -28,9 +29,12 @@
                 %td= sex_tag user
                 %td= user.age
                 %td
-                  = edit_tag edit_user_path(user)
-                  - unless user == current_user
-                    = delete_tag user, user.name
+                  - if can? :manage, User
+                    = edit_tag edit_user_path(user)
+                    - unless user == current_user
+                      = delete_tag user, user.name
+                  - else
+                    = show_tag user
 
 :javascript
   $('.table').DataTable( {

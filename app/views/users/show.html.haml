@@ -1,0 +1,86 @@
+- content_for :title, @user.name
+
+- content_for :toolbar do
+  = back_tag users_path
+  - if can? :manage, @user
+    = edit_tag edit_user_path(@user), class: 'btn btn-circle btn btn-outline green'
+
+.row
+  .col-md-6
+    .portlet.light
+      .portlet-title
+        .caption.font-green
+          %i.icon-bubble.font-green
+          %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.personal'
+      .portlet-body.form
+        .form-body
+          .row
+            .col-md-6
+              %p= t 'activerecord.attributes.user.first_name'
+              %strong= @user.first_name
+            .col-md-6
+              %p= t 'activerecord.attributes.user.last_name'
+              %strong= @user.last_name
+          %hr
+          .row
+            .col-md-6
+              %p= t 'activerecord.attributes.user.birth_date'
+              %strong= @user.birth_date ? l(@user.birth_date) : ''
+            .col-md-6
+              %p= t 'activerecord.attributes.user.sex'
+              %strong= sex_tag @user
+          %hr
+          .row
+            .col-md-6
+              %p= t 'activerecord.attributes.user.email'
+              %p
+                %strong= @user.email
+            .col-md-6
+              %p= t 'activerecord.attributes.user.phone_number'
+              %p
+                %strong= @user.phone_number
+            .col-md-12
+              %p= t 'activerecord.attributes.user.address'
+              %p
+                %strong= @user.address
+              %p
+                %strong
+                  = @user.postalcode
+                  = @user.city
+              %p
+                %strong= @user.country_name
+
+  .col-md-6
+    .portlet.light
+      .portlet-title
+        .caption.font-green
+          %i.icon-bubble.font-green
+          %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.club'
+      .portlet-body.form
+        .form-body
+          .row
+            .col-md-6
+              %p= t 'activerecord.attributes.user.active'
+              %p
+                %strong= active_tag @user
+          %hr
+          .row
+            .col-md-6
+              %p= t 'activerecord.attributes.user.category'
+              %p
+                %strong= @user.category ? t("enums.user.category.#{@user.category}") : ''
+            .col-md-6
+              %p= t 'activerecord.attributes.user.type'
+              %p
+                %strong=  @user.type ? t("enums.user.type.#{@user.type}") : ''
+          .row
+            .col-md-6
+              %p= t 'activerecord.attributes.user.rankings'
+              %p
+                %strong= @user.rankings ? t("enums.user.rankings.#{@user.rankings}") : ''
+          %hr
+          .row
+            .col-md-6
+              %p= t 'activerecord.attributes.user.comments'
+              %p
+                %strong= @user.comments

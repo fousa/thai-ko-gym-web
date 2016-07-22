@@ -4,7 +4,7 @@ describe 'confirm account', type: :feature do
   before do
     clear_emails
 
-    @user = create(:user, email: 'jake@snake.be')
+    @user = create(:user, email: 'jake@snake.be', role: :teacher)
     @user.send_confirmation_instructions
 
     open_email('jake@snake.be')

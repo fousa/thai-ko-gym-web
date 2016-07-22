@@ -21,6 +21,11 @@ Rails.application.routes.draw do
   ### profile
   resource :profile, only: [:show, :edit, :update]
 
+  ### error
+  %w(404 403 422 500 503).each do |code|
+    get code, to: 'errors#show', code: code, as: "error_#{code}"
+  end
+
   # Set the root url
   root to: redirect('/users/sign_in')
 end
