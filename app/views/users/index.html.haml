@@ -1,4 +1,5 @@
 - content_for :title, t('pages.users.list.title')
+- content_for :subtitle, t('pages.users.list.subtitle', count: @user_count)
 - content_for :toolbar do
   .btn-group
     = filter_tag users_path, current_filter_title, current_filter_icon do

@@ -3,20 +3,23 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy, :invite]
+  before_action :set_users, only: [:index, :active, :inactive]
 
   helper_method :sort_column, :sort_direction
 
   def index
-    @users = User.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
+    @user_count = @all_users.count
   end
 
   def active
-    @users = User.active.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
+    @user_count = @all_users.active.count
+    @users = @users.active
     render :index
   end
 
   def inactive
-    @users = User.inactive.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
+    @user_count = @all_users.inactive.count
+    @users = @users.inactive
     render :index
   end
 
@@ -60,6 +63,11 @@ class UsersController < ApplicationController
   end
 
   private
+
+  def set_users
+    @users = User.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
+    @all_users = User.order("#{sort_column} #{sort_direction}").all.search params[:search]
+  end
 
   def set_user
     @user = User.find(params[:id])

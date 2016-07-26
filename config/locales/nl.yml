@@ -121,6 +121,9 @@ nl:
           invite: 'Er werd een uitnodiging verstuurd naar %{name}.'
       list:
         title: 'Ledenlijst'
+        subtitle:
+          one: 'Er werd 1 lid gevonden'
+          other: 'Er werden %{count} leden gevonden'
         labels:
           overview: 'Overzicht'
           name: 'Naam'
