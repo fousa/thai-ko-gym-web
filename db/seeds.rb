@@ -12,6 +12,7 @@
     address:      Faker::Address.street_address,
     postalcode:   Faker::Address.postcode,
     city:         Faker::Address.city,
-    country:      Faker::Address.country_code
+    country:      Faker::Address.country_code,
+    role:         :member
   )
 end
