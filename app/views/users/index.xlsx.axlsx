@@ -3,8 +3,61 @@ workbook.styles do |style|
   highlight_cell = style.add_style(bg_color: "EFC376")
 
   workbook.add_worksheet(name: "Ledenlijst") do |sheet|
+     sheet.add_row [
+       t('activerecord.attributes.user.last_name'),
+       t('activerecord.attributes.user.first_name'),
+       t('activerecord.attributes.user.age'),
+       t('activerecord.attributes.user.birth_date'),
+       t('activerecord.attributes.user.active'),
+       t('activerecord.attributes.user.sex'),
+       t('activerecord.attributes.user.category'),
+       t('activerecord.attributes.user.rankings'),
+       t('activerecord.attributes.user.type'),
+       t('activerecord.attributes.user.email'),
+       t('activerecord.attributes.user.phone_number'),
+       t('activerecord.attributes.user.address'),
+       t('activerecord.attributes.user.postalcode'),
+       t('activerecord.attributes.user.city'),
+       t('activerecord.attributes.user.country_name'),
+      ], style: [
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell,
+        highlight_cell
+      ]
+
     @users.each do |user|
-     sheet.add_row [user.name, user.city], style: [highlight_cell, nil]
+     sheet.add_row [
+       user.last_name,
+       user.first_name,
+       user.birth_date,
+       user.age,
+       user.active ? t('simple_form.yes') : t('simple_form.no'),
+       t("enums.user.sex.#{user.sex}"),
+       user.category ? t("enums.user.category.#{user.category}") : '',
+       user.rankings ? t("enums.user.rankings.#{user.rankings}") : '',
+       user.type ? t("enums.user.type.#{user.type}") : '',
+       user.email,
+       user.phone_number,
+       user.address,
+       user.postalcode,
+       user.city,
+       user.country_name
+      ], style: [
+        highlight_cell,
+        highlight_cell
+      ]
     end
   end
 end
