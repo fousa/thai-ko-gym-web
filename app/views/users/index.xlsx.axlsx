@@ -2,7 +2,7 @@ workbook = xlsx_package.workbook
 workbook.styles do |style|
   highlight_cell = style.add_style(bg_color: "EFC376")
 
-  workbook.add_worksheet(name: "Ledenlijst") do |sheet|
+  workbook.add_worksheet(name: @name) do |sheet|
      sheet.add_row [
        t('activerecord.attributes.user.last_name'),
        t('activerecord.attributes.user.first_name'),

@@ -9,19 +9,19 @@ class UsersController < ApplicationController
 
   def index
     @user_count = @users.count
-    respond_to_index 'pages.users.export.all'
+    respond_to_index 'all'
   end
 
   def active
     @users = @users.active
     @user_count = @users.count
-    respond_to_index 'pages.users.export.active'
+    respond_to_index 'active'
   end
 
   def inactive
     @users = @users.inactive
     @user_count = @users.count
-    respond_to_index 'pages.users.export.inactive'
+    respond_to_index 'inactive'
   end
 
   def show
@@ -65,14 +65,15 @@ class UsersController < ApplicationController
 
   private
 
-  def respond_to_index(filename_translation)
+  def respond_to_index(type)
     respond_to do |format|
       format.html do
         @users = @users.page(params[:page])
         render :index
       end
       format.xlsx do
-        response.headers['Content-Disposition'] = "attachment; filename=#{t(filename_translation)}"
+        @name = t("pages.users.export.name.#{type}")
+        response.headers['Content-Disposition'] = "attachment; filename=#{t("pages.users.export.filename.#{type}")}"
         render :index
       end
     end

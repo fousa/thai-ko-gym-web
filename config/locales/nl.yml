@@ -97,9 +97,14 @@ nl:
 
     users:
       export:
-        all: 'ledenlijst'
-        active: 'actieve-ledenlijst'
-        inactive: 'inactieve-ledenlijst'
+        filename:
+          all: 'ledenlijst'
+          active: 'actieve-ledenlijst'
+          inactive: 'inactieve-ledenlijst'
+        name:
+          all: 'Ledenlijst'
+          active: 'Actieve Ledenlijst'
+          inactive: 'Inactieve Ledenlijst'
       filter:
         clear: 'alle leden'
         active: 'Actieve leden'
