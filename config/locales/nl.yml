@@ -7,6 +7,7 @@ nl:
       invite: 'Ben je zeker dat je %{name} wil uitnodigen om toegang te geven tot deze website?'
     links:
       back: 'Terug naar overzicht'
+      filter: 'Filter lijst'
       add: 'Toevoegen'
       edit: 'Wijzig'
       show: 'Bekijken'
@@ -98,6 +99,10 @@ nl:
           edit: 'Jouw profiel is succesvol gewijzigd.'
 
     users:
+      filter:
+        clear: 'alle leden'
+        active: 'Actieve leden'
+        inactive: 'Inactieve leden'
       form:
         titles:
           new: 'Lid aanmaken'
@@ -116,6 +121,9 @@ nl:
           invite: 'Er werd een uitnodiging verstuurd naar %{name}.'
       list:
         title: 'Ledenlijst'
+        subtitle:
+          one: 'Er werd 1 lid gevonden'
+          other: 'Er werden %{count} leden gevonden'
         labels:
           overview: 'Overzicht'
           name: 'Naam'

@@ -3,9 +3,24 @@ class UsersController < ApplicationController
 
   before_action :authenticate_user!
   before_action :set_user, only: [:show, :edit, :update, :destroy, :invite]
+  before_action :set_users, only: [:index, :active, :inactive]
+
+  helper_method :sort_column, :sort_direction
 
   def index
-    @users = User.all
+    @user_count = @all_users.count
+  end
+
+  def active
+    @user_count = @all_users.active.count
+    @users = @users.active
+    render :index
+  end
+
+  def inactive
+    @user_count = @all_users.inactive.count
+    @users = @users.inactive
+    render :index
   end
 
   def show
@@ -49,11 +64,30 @@ class UsersController < ApplicationController
 
   private
 
+  def set_users
+    @users = User.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
+    @all_users = User.order("#{sort_column} #{sort_direction}").all.search params[:search]
+  end
+
   def set_user
     @user = User.find(params[:id])
   end
 
   def user_params
     params.require(:user).permit(:first_name, :role, :last_name, :sex, :email, :birth_date, :category, :type, :rankings, :phone_number, :active, :comments, :address, :postalcode, :city, :country)
+  end
+
+  ### sorting
+
+  def sortable_columns
+    %w(first_name sex birth_date city active)
+  end
+
+  def sort_column
+    sortable_columns.include?(params[:column]) ? params[:column] : 'first_name'
+  end
+
+  def sort_direction
+    %w(asc desc).include?(params[:direction]) ? params[:direction] : 'asc'
   end
 end

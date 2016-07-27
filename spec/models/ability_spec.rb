@@ -8,6 +8,8 @@ describe User do
 
     it { should_not be_able_to(:login, User.new) }
     it { should_not be_able_to(:read, User.new) }
+    it { should_not be_able_to(:active, User.new) }
+    it { should_not be_able_to(:inactive, User.new) }
     it { should_not be_able_to(:manage, User.new) }
   end
 
@@ -17,6 +19,8 @@ describe User do
 
     it { should be_able_to(:login, User.new) }
     it { should be_able_to(:read, User.new) }
+    it { should be_able_to(:active, User.new) }
+    it { should be_able_to(:inactive, User.new) }
     it { should_not be_able_to(:manage, User.new) }
   end
 
@@ -26,6 +30,8 @@ describe User do
 
     it { should be_able_to(:login, User.new) }
     it { should be_able_to(:read, User.new) }
+    it { should be_able_to(:active, User.new) }
+    it { should be_able_to(:inactive, User.new) }
     it { should be_able_to(:manage, User.new) }
   end
 end

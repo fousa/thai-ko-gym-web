@@ -7,6 +7,8 @@ describe UsersController do
     let(:user) { create(:user) }
 
     it { should redirect_for_login { get :index } }
+    it { should redirect_for_login { get :active } }
+    it { should redirect_for_login { get :inactive } }
     it { should redirect_for_login { get :new } }
     it { should redirect_for_login { post :create } }
     it { should redirect_for_login { get :show, params: { id: user.id } } }
@@ -20,6 +22,8 @@ describe UsersController do
     let(:user) { create(:user) }
 
     it { should render_template_name('index') { get :index } }
+    it { should render_template_name('index') { get :active } }
+    it { should render_template_name('index') { get :inactive } }
     it { should render_template_name('new') { get :new } }
     it { should render_template_name('show') { get :show, params: { id: user.id } } }
     it { should render_template_name('edit') { get :edit, params: { id: user.id } } }
@@ -35,6 +39,8 @@ describe UsersController do
     let(:user) { create(:user) }
 
     it { should render_template_name('index') { get :index } }
+    it { should render_template_name('index') { get :active } }
+    it { should render_template_name('index') { get :inactive } }
     it { should render_template_name('show') { get :show, params: { id: user.id } } }
     it { expect { get :new }.to raise_exception(CanCan::AccessDenied) }
     it { expect { get :edit, params: { id: user.id } }.to raise_exception(CanCan::AccessDenied) }
@@ -47,6 +53,8 @@ describe UsersController do
     let(:user) { create(:user) }
 
     it { expect { get :index }.to raise_exception(CanCan::AccessDenied) }
+    it { expect { get :active }.to raise_exception(CanCan::AccessDenied) }
+    it { expect { get :inactive }.to raise_exception(CanCan::AccessDenied) }
     it { expect { get :show, params: { id: user.id } }.to raise_exception(CanCan::AccessDenied) }
     it { expect { get :new }.to raise_exception(CanCan::AccessDenied) }
     it { expect { get :edit, params: { id: user.id } }.to raise_exception(CanCan::AccessDenied) }

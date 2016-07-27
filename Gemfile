@@ -76,6 +76,14 @@ gem 'faker', '~> 1.6'
 # [cancancan](https://github.com/CanCanCommunity/cancancan)
 gem 'cancancan', '~> 1.15.0'
 
+# Kaminari is a Scope &amp; Engine based, clean, powerful, agnostic, customiza
+# [kaminari](https://github.com/amatsuda/kaminari)
+gem 'kaminari', '~> 0.17.0'
+
+# Bootstrap-ify pagination with Kaminari - Compatible with Bootstrap 2.x, 3.x
+# [bootstrap-kaminari-views](http://github.com/matenia/bootstrap-kaminari-views)
+gem "bootstrap-kaminari-views", "~> 0.0.5"
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)

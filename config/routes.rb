@@ -16,6 +16,10 @@ Rails.application.routes.draw do
     member do
       post :invite
     end
+    collection do
+      get :active
+      get :inactive
+    end
   end
 
   ### profile

@@ -9,6 +9,30 @@ module ApplicationHelper
     end
   end
 
+  def filter_tag(path, title = nil, icon = nil, &_block)
+    filter_content = link_to path, class: 'btn btn-circle btn-default', data: { toggle: 'dropdown' } do
+      content = content_tag :i, nil, class: "fa fa-#{icon || 'filter'}"
+      content << " #{title || t('global.links.filter')} "
+      content << content_tag(:i, nil, class: 'fa fa-angle-down')
+      content
+    end
+    ul = content_tag :ul, class: 'dropdown-menu' do
+      yield
+    end
+    filter_content << ul
+    filter_content
+  end
+
+  def filter_item_tag(path, icon, title)
+    content_tag :li do
+      link_to path do
+        content = content_tag :i, nil, class: "fa fa-#{icon}"
+        content << " #{title}"
+        content
+      end
+    end
+  end
+
   def add_tag(path, icon = 'plus')
     link_to path, class: 'btn btn-circle btn-default' do
       content = content_tag :i, nil, class: "fa fa-#{icon}"

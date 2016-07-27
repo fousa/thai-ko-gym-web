@@ -4,7 +4,10 @@
       .page-head
         .container
           .page-title
-            %h1= yield :title
+            %h1
+              = yield :title
+              - if yield(:subtitle).present?
+                %small= yield :subtitle
           - if yield(:toolbar).present?
             .page-toolbar
               .btn-toolbar
