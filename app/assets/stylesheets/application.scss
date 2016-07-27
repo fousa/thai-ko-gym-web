@@ -19,6 +19,11 @@
 //// Layout overrides.
 ////
 
+// Add some padding to the export button.
+.actions .pull-right {
+  margin-left: 1em;
+}
+
 // No link color in the footer.
 .copyright a {
   color: #a2abb7;

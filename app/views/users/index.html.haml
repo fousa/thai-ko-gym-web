@@ -2,7 +2,7 @@
 - content_for :subtitle, t('pages.users.list.subtitle', count: @user_count)
 - content_for :toolbar do
   .btn-group
-    = filter_tag nil, current_filter_title, current_filter_icon do
+    = filter_tag url_for(only_path: true, action: action_name), current_filter_title, current_filter_icon do
       - unless action_name == 'index'
         = filter_item_tag users_path(search: params[:search], column: params[:column], direction: params[:direction]), 'users', t('pages.users.filter.clear')
         %li.divider
@@ -21,10 +21,12 @@
           %i.fa.fa-list.font-green
           = t 'pages.users.list.labels.overview'
         .actions
-          = form_tag request.fullpath, method: :get do
+          = form_tag url_for(only_path: true, action: action_name), method: :get do
             %label{ for: 'search' }
               Zoeken:&nbsp;
               %input.form-control.input-sm.input-small.input-inline{ type: 'search', id: 'search', name: 'search', value: params[:search], autofocus: true }
+            .pull-right
+              = xls_tag url_for(only_path: true, action: action_name, format: :xlsx)
       .portlet-body
         .table-responsive
           %table.table.table-striped.table-bordered.dataTable
