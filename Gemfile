@@ -82,7 +82,11 @@ gem 'kaminari', '~> 0.17.0'
 
 # Bootstrap-ify pagination with Kaminari - Compatible with Bootstrap 2.x, 3.x
 # [bootstrap-kaminari-views](http://github.com/matenia/bootstrap-kaminari-views)
-gem "bootstrap-kaminari-views", "~> 0.0.5"
+gem 'bootstrap-kaminari-views', '~> 0.0.5'
+
+# Axlsx_Rails provides an Axlsx renderer so you can move all your spreadsheet
+# [axlsx_rails](https://github.com/straydogstudio/axlsx_rails)
+gem 'axlsx_rails', '~> 0.5.0'
 
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin

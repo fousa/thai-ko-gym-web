@@ -1,0 +1,10 @@
+workbook = xlsx_package.workbook
+workbook.styles do |style|
+  highlight_cell = style.add_style(bg_color: "EFC376")
+
+  workbook.add_worksheet(name: "Ledenlijst") do |sheet|
+    @users.each do |user|
+     sheet.add_row [user.name, user.city], style: [highlight_cell, nil]
+    end
+  end
+end

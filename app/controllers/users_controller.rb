@@ -8,19 +8,20 @@ class UsersController < ApplicationController
   helper_method :sort_column, :sort_direction
 
   def index
-    @user_count = @all_users.count
+    @user_count = @users.count
+    respond_to_index 'pages.users.export.all'
   end
 
   def active
-    @user_count = @all_users.active.count
     @users = @users.active
-    render :index
+    @user_count = @users.count
+    respond_to_index 'pages.users.export.active'
   end
 
   def inactive
-    @user_count = @all_users.inactive.count
     @users = @users.inactive
-    render :index
+    @user_count = @users.count
+    respond_to_index 'pages.users.export.inactive'
   end
 
   def show
@@ -64,9 +65,21 @@ class UsersController < ApplicationController
 
   private
 
+  def respond_to_index(filename_translation)
+    respond_to do |format|
+      format.html do
+        @users = @users.page(params[:page])
+        render :index
+      end
+      format.xlsx  do
+        response.headers['Content-Disposition'] = "attachment; filename='#{t(filename_translation)}'"
+        render :index
+      end
+    end
+  end
+
   def set_users
-    @users = User.order("#{sort_column} #{sort_direction}").page(params[:page]).search params[:search]
-    @all_users = User.order("#{sort_column} #{sort_direction}").all.search params[:search]
+    @users = User.order("#{sort_column} #{sort_direction}").search params[:search]
   end
 
   def set_user

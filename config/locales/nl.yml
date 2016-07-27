@@ -96,6 +96,10 @@ nl:
           edit: 'Jouw profiel is succesvol gewijzigd.'
 
     users:
+      export:
+        all: 'ledenlijst'
+        active: 'actieve-ledenlijst'
+        inactive: 'inactieve-ledenlijst'
       filter:
         clear: 'alle leden'
         active: 'Actieve leden'
