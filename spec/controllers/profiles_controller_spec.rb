@@ -24,6 +24,7 @@ describe ProfilesController do
     before { sign_in create(:user) }
     let(:user) { create(:user) }
 
-    it { should permit(:first_name, :email, :last_name, :sex, :birth_date, :phone_number, :password, :password_confirmation, :address, :postalcode, :city, :country).for(:update, params: { user: { first_name: '' } }).on(:user) }
+    it { should permit(:first_name, :email, :last_name, :sex, :birth_date, :phone_number, :address, :postalcode, :city, :country).for(:update, params: { user: { first_name: '' } }).on(:user) }
+    it { should permit(:password, :password_confirmation, :current_password).for(:update_password, verb: :patch, params: { user: { password: '' } }).on(:user) }
   end
 end

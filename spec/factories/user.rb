@@ -9,9 +9,8 @@ FactoryGirl.define do
     factory :user_with_password do
       email { Faker::Internet.email }
 
-      some_password = Faker::Internet.password
-      password some_password
-      password_confirmation some_password
+      password '123123123'
+      password_confirmation '123123123'
 
       confirmed_at Time.now
       role :admin
