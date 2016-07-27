@@ -51,7 +51,9 @@ class User < ApplicationRecord
   end
 
   def country_name
+    return nil if country.nil?
     country_name = ISO3166::Country[country]
+    return nil if country_name.nil?
     country_name.translations[I18n.locale.to_s] || country_name.name
   end
 
