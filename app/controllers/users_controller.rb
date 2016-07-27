@@ -72,7 +72,7 @@ class UsersController < ApplicationController
         render :index
       end
       format.xlsx  do
-        response.headers['Content-Disposition'] = "attachment; filename='#{t(filename_translation)}'"
+        response.headers['Content-Disposition'] = "attachment; filename=#{t(filename_translation)}"
         render :index
       end
     end

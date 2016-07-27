@@ -33,6 +33,12 @@ module ApplicationHelper
     end
   end
 
+  def xls_tag(path, icon = 'file-excel-o')
+    link_to path, class: 'btn btn-circle btn-warning btn-sm', id: 'xls' do
+      content_tag :i, nil, class: "fa fa-#{icon}"
+    end
+  end
+
   def add_tag(path, icon = 'plus')
     link_to path, class: 'btn btn-circle btn-default' do
       content = content_tag :i, nil, class: "fa fa-#{icon}"
