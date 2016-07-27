@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   end
 
   ### profile
-  resource :profile, only: [:show, :edit, :update]
+  resource :profile, only: [:show, :edit, :update] do
+    collection do
+      patch :update_password
+    end
+  end
 
   ### error
   %w(404 403 422 500 503).each do |code|

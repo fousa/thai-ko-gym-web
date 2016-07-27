@@ -29,6 +29,7 @@ nl:
       user:
         reset_password_token: 'Herstel token'
         password: 'Wachtwoord'
+        current_password: 'Huidig wachtwoord'
         password_confirmation: 'Wachtwoord bevestiging'
         first_name: 'Voornaam'
         last_name: 'Achternaam'

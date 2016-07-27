@@ -42,11 +42,14 @@
           %i.icon-bubble.font-green
           %span.caption-subject.bold.uppercase= t 'pages.users.form.labels.website'
       .portlet-body.form
-        = simple_form_for @user, url: profile_path do |f|
+        = simple_form_for @user, url: update_password_profile_path do |f|
           .form-body
             .row
               .col-md-12
-                = f.input :password,              required: false, autocomplete: false, autofocus: true, placeholder: t('pages.profile.form.labels.password')
-                = f.input :password_confirmation, required: false, autocomplete: false,                  placeholder: t('pages.profile.form.labels.password_confirmation')
+                = f.input :current_password, required: false, autocomplete: false, autofocus: true
+            .row
+              .col-md-12
+                = f.input :password,              required: false, autocomplete: false, autofocus: true
+                = f.input :password_confirmation, required: false, autocomplete: false
           .form-actions
             = f.button :submit, t('pages.profile.form.buttons.password'), class: 'green'
