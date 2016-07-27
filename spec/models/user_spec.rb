@@ -17,7 +17,25 @@ describe User do
     end
   end
 
-  context 'Utilities' do
+  context 'scopes' do
+    it 'should return the active users' do
+      create(:user, active: true)
+      create(:user, active: true)
+      create(:user, active: false)
+
+      expect(User.active.count).to eq(2)
+    end
+
+    it 'should return the inactive users' do
+      create(:user, active: false)
+      create(:user, active: false)
+      create(:user, active: true)
+
+      expect(User.inactive.count).to eq(2)
+    end
+  end
+
+  context 'utilities' do
     it 'should have a correct name' do
       user = create(:user, first_name: 'Jake', last_name: 'Snake')
       expect(user.name).to eq('Jake Snake')

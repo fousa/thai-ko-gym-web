@@ -4,6 +4,7 @@ FactoryGirl.define do
     last_name { Faker::Name.name }
     sex { User.sexes.keys.sample }
     role { User.roles.keys.sample }
+    active false
 
     factory :user_with_password do
       email { Faker::Internet.email }
