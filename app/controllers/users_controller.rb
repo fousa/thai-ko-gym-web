@@ -71,7 +71,7 @@ class UsersController < ApplicationController
         @users = @users.page(params[:page])
         render :index
       end
-      format.xlsx  do
+      format.xlsx do
         response.headers['Content-Disposition'] = "attachment; filename=#{t(filename_translation)}"
         render :index
       end
