@@ -2,14 +2,14 @@
 - content_for :subtitle, t('pages.users.list.subtitle', count: @user_count)
 - content_for :toolbar do
   .btn-group
-    = filter_tag users_path, current_filter_title, current_filter_icon do
+    = filter_tag nil, current_filter_title, current_filter_icon do
       - unless action_name == 'index'
-        = filter_item_tag users_path, 'users', t('pages.users.filter.clear')
+        = filter_item_tag users_path(search: params[:search], column: params[:column], direction: params[:direction]), 'users', t('pages.users.filter.clear')
         %li.divider
       - unless action_name == 'active'
-        = filter_item_tag active_users_path, 'check-circle',  t('pages.users.filter.active')
+        = filter_item_tag active_users_path(search: params[:search], column: params[:column], direction: params[:direction]), 'check-circle',  t('pages.users.filter.active')
       - unless action_name == 'inactive'
-        = filter_item_tag inactive_users_path, 'times-circle',  t('pages.users.filter.inactive')
+        = filter_item_tag inactive_users_path(search: params[:search], column: params[:column], direction: params[:direction]), 'times-circle',  t('pages.users.filter.inactive')
   - if can? :manage, User
     = add_tag new_user_path, 'user-plus'
 
@@ -21,7 +21,7 @@
           %i.fa.fa-list.font-green
           = t 'pages.users.list.labels.overview'
         .actions
-          = form_tag users_path, method: :get do
+          = form_tag request.fullpath, method: :get do
             %label{ for: 'search' }
               Zoeken:&nbsp;
               %input.form-control.input-sm.input-small.input-inline{ type: 'search', id: 'search', name: 'search', value: params[:search], autofocus: true }
