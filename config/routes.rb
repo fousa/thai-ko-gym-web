@@ -29,6 +29,12 @@ Rails.application.routes.draw do
     end
   end
 
+  ### API
+  namespace :api do
+    post 'authenticate', to: 'authentication#create'
+    resources :users, only: :index
+  end
+
   ### error
   %w(404 403 422 500 503).each do |code|
     get code, to: 'errors#show', code: code, as: "error_#{code}"
