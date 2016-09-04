@@ -88,6 +88,10 @@ gem 'bootstrap-kaminari-views', '~> 0.0.5'
 # [axlsx_rails](https://github.com/straydogstudio/axlsx_rails)
 gem 'axlsx_rails', '~> 0.5.0'
 
+# A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standa
+# [jwt](http://github.com/jwt/ruby-jwt)
+gem 'jwt', '~> 1.5.4'
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
