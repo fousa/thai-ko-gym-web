@@ -92,6 +92,10 @@ gem 'axlsx_rails', '~> 0.5.0'
 # [jwt](http://github.com/jwt/ruby-jwt)
 gem 'jwt', '~> 1.5.4'
 
+# Easy way to build and manage commands (service objects)
+# [simple_command](http://github.com/nebulab/simple_command)
+gem 'simple_command', '~> 0.0.9'
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
