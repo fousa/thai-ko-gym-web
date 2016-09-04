@@ -62,7 +62,7 @@
     </databaseInfo>
     <object type="LMREQUEST" id="z102">
         <attribute name="uuid" type="string">87BEC740-8D16-4BF8-BE28-9AFDD8ADF2F6</attribute>
-        <attribute name="url" type="string">http://thai-ko-gym-web.dev/api/users.json</attribute>
+        <attribute name="url" type="string">http://thai-ko-gym-web.dev/api/users/active.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -73,7 +73,7 @@
         <attribute name="name" type="string">Users</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z114 z109 z104"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z104 z114 z109"></relationship>
     </object>
     <object type="LMCOOKIEJAR" id="z103">
         <attribute name="uuid" type="string">4F19BF90-7012-45A8-ABD6-42AB00766420</attribute>

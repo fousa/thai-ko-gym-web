@@ -32,7 +32,11 @@ Rails.application.routes.draw do
   ### API
   namespace :api do
     post 'authenticate', to: 'authentication#create'
-    resources :users, only: :index
+    resources :users, only: :index do
+      collection do
+        get :active
+      end
+    end
   end
 
   ### error
