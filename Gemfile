@@ -96,6 +96,10 @@ gem 'jwt', '~> 1.5.4'
 # [simple_command](http://github.com/nebulab/simple_command)
 gem 'simple_command', '~> 0.0.9'
 
+# Rack::SslEnforcer is a simple Rack middleware to enforce ssl connections
+# [rack-ssl-enforcer](http://github.com/tobmatth/rack-ssl-enforcer)
+gem 'rack-ssl-enforcer', '~> 0.2.9'
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
