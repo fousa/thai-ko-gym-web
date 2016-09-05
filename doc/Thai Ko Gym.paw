@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>21D472B1-5DC8-472C-97D7-933BEE6023EF</UUID>
-        <nextObjectID>114</nextObjectID>
+        <nextObjectID>118</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -62,7 +62,7 @@
     </databaseInfo>
     <object type="LMREQUEST" id="z102">
         <attribute name="uuid" type="string">87BEC740-8D16-4BF8-BE28-9AFDD8ADF2F6</attribute>
-        <attribute name="url" type="string">http://thai-ko-gym-web.dev/api/users/active.json</attribute>
+        <attribute name="url" type="string">http://thai-ko-gym.dev/api/users.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -73,7 +73,7 @@
         <attribute name="name" type="string">Users</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z104 z114 z109"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z109 z114 z104"></relationship>
     </object>
     <object type="LMCOOKIEJAR" id="z103">
         <attribute name="uuid" type="string">4F19BF90-7012-45A8-ABD6-42AB00766420</attribute>
@@ -117,7 +117,7 @@
         <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z105"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z109">
-        <attribute name="value" type="string">Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE0NzMxMTMxNzh9.G54UzNbZWg5y3xDV8rPYkCx8xUwg4fzKmPKvzURD3Ig</attribute>
+        <attribute name="value" type="string">Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MSwiZXhwIjoxNDczMTY2OTM3fQ.kSkGQo3xQsSGy6DoJxfqkMgRdPm_Hz7WixYqPcT5krc</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">Authorization</attribute>
         <attribute name="enabled" type="bool">1</attribute>
@@ -127,7 +127,7 @@
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z102"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z110">
-        <attribute name="value" type="string">[{"data":{"charset":"utf-8","username":["jelle@fousa.be"],"password":[{"data":{"value":"03011B2E05636A7ED098FE7C8F9CD572A0B51D7DBBEF55C915AEA5E3F1D4211117D250D3048BB2886B38E2459B897F0CAA631874535E66D96DB44F99C2968AED7E9BA34AE9DF63EDEC9DB43F7CB643D3E43F","keyUUID":"C3E1FCBA-42C4-480B-B2B5-A873F23B9D95","mode":0},"identifier":"com.luckymarmot.SecureDynamicValue"}]},"identifier":"com.luckymarmot.BasicAuthDynamicValue"}]</attribute>
+        <attribute name="value" type="string">[{"data":{"charset":"utf-8","username":["jelle@fousa.be"],"password":[{"data":{"value":"03011B2E05636A7ED098FE7C8F9CD572A0B5C65B1896333D25EEA26BD500FF772631FABF5AA1544E71E726CD4D03F4865EB2F1E40A54D39F9548012C1563661A46C83E17E5984B48CD94BF5BFDF9F3A06F63","keyUUID":"2202F567-9A33-4CD0-A069-2F65AB234D79","mode":0},"identifier":"com.luckymarmot.SecureDynamicValue"}]},"identifier":"com.luckymarmot.BasicAuthDynamicValue"}]</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">Authorization</attribute>
         <attribute name="enabled" type="bool">1</attribute>
@@ -158,18 +158,18 @@
     </object>
     <object type="LMREQUEST" id="z113">
         <attribute name="uuid" type="string">E42B566F-EE37-4D5D-B15F-4DF2C3E373C7</attribute>
-        <attribute name="url" type="string">http://thai-ko-gym-web.dev/api/authenticate.json</attribute>
+        <attribute name="url" type="string">http://thai-ko-gym.dev/api/authenticate.json</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="order" type="int64">1</attribute>
+        <attribute name="order" type="int64">2</attribute>
         <attribute name="name" type="string">Authenticate</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z110 z111 z112"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z110 z112 z111"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z114">
         <attribute name="value" type="string"></attribute>
@@ -180,5 +180,51 @@
         <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z102"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z115">
+        <attribute name="value" type="string">application/json</attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string">Content-Type</attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z117"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z116">
+        <attribute name="value" type="string">Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MSwiZXhwIjoxNDczMTY2OTM3fQ.kSkGQo3xQsSGy6DoJxfqkMgRdPm_Hz7WixYqPcT5krc</attribute>
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="name" type="string">Authorization</attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z117"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z117">
+        <attribute name="uuid" type="string">CF60AD6B-A64E-4B51-A231-30A362B4D629</attribute>
+        <attribute name="url" type="string">http://thai-ko-gym.dev/api/presences.json</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">POST</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="body" type="string">[{"data":{"json":"{\\"presence\\":{\\"user_id\\":\\"71\\",\\"present_at\\":\\"2016-09-20\\"}}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="name" type="string">Create Presence</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z115 z118 z116"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z118">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">2</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z117"></relationship>
     </object>
 </database>
