@@ -13,8 +13,5 @@ module ThaiKoGym
 
     # Make the application handle the exceptions through the routing.
     config.exceptions_app = self.routes
-
-    # Load the library folder by default.
-    config.autoload_paths << Rails.root.join('lib')
   end
 end
