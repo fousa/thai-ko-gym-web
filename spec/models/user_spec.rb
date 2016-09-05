@@ -1,6 +1,11 @@
 require 'rails_helper'
 
 describe User do
+  context 'Relations' do
+    it { should have_many(:presences) }
+    it { should have_many(:registered_presences).class_name('Presence').with_foreign_key(:registered_by) }
+  end
+
   context 'Validations' do
     it { should validate_presence_of(:first_name) }
     it { should validate_presence_of(:last_name) }

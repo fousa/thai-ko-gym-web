@@ -10,6 +10,11 @@ class User < ApplicationRecord
          :validatable,
          :confirmable
 
+  ### Relations
+
+  has_many :presences
+  has_many :registered_presences, class_name: 'Presence', foreign_key: 'registered_by', inverse_of: :registered_by
+
   ### Enums
 
   enum role: [:member, :teacher, :admin]
