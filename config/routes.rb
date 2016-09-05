@@ -32,7 +32,7 @@ Rails.application.routes.draw do
   ### API
   namespace :api do
     post 'authenticate', to: 'authentication#create'
-    resources :users, only: :index do
+    resources :users, only: [:index, :active] do
       collection do
         get :active
       end
