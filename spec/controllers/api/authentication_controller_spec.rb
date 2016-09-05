@@ -11,14 +11,14 @@ describe Api::AuthenticationController do
   it 'should return a 401 error when incorrect credentials are given' do
     add_authentication_header 'some@some.some', '123123123'
 
-    post :create, {}
+    post :create, params: {}
     expect(response).to have_http_status(:unauthorized)
   end
 
   it 'should return a token when correct credentials are given' do
     add_authentication_header user.email, '123123123'
 
-    post :create, {}
+    post :create, params: {}
     expect(response).to have_http_status(:success)
     expect(JSON.parse(response.body)).to have_key('auth_token')
   end

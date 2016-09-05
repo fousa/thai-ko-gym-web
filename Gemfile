@@ -169,7 +169,7 @@ group :test do
 
   # Making tests easy on the fingers and eyes
   # [shoulda-matchers](http://thoughtbot.com/community/)
-  gem 'shoulda-matchers', '~> 3.1'
+  gem 'shoulda-matchers', git: 'https://github.com/michaelrigart/shoulda-matchers.git', ref: '8bd56c5a5eac751a6e1362624d2dbbca918e0e37'
 
   # Strategies for cleaning databases. Can be used to ensure a clean state for t
   # [database_cleaner](http://github.com/DatabaseCleaner/database_cleaner)
