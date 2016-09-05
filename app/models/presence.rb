@@ -6,7 +6,7 @@ class Presence < ApplicationRecord
 
   ### Validations
 
-  validates :user_id,       presence: true
+  validates :user,          presence: true
   validates :present_at,    presence: true
   validates :registered_by, presence: true
 end

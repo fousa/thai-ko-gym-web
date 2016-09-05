@@ -7,7 +7,7 @@ describe Presence do
   end
 
   context 'Validations' do
-    it { should validate_presence_of(:user_id) }
+    it { should validate_presence_of(:user) }
     it { should validate_presence_of(:present_at) }
     it { should validate_presence_of(:registered_by) }
 
