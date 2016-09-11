@@ -21,7 +21,7 @@ describe 'overview', type: :feature do
 
   context 'search' do
     it 'should be able to search the users', js: true do
-      create(:user, first_name: 'Name', last_name: 'test')
+      create(:user, first_name: 'Namelicious', last_name: 'test')
       create(:user, first_name: 'No', last_name: 'test')
       visit users_path
 
