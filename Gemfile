@@ -100,6 +100,10 @@ gem 'simple_command', '~> 0.0.9'
 # [rack-ssl-enforcer](http://github.com/tobmatth/rack-ssl-enforcer)
 gem 'rack-ssl-enforcer', '~> 0.2.9'
 
+# Rails builder for creating tables and calendars inspired by ActionView's For
+# [watu_table_builder](https://github.com/watu/table_builder)
+gem 'watu_table_builder', '~> 0.3', require: 'table_builder'
+
 group :development, :test do
   # Byebug is a Ruby 2 debugger. It's implemented using the Ruby 2 TracePoin
   # [byebug](http://github.com/deivid-rodriguez/byebug)
