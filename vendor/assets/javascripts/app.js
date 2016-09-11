@@ -59,8 +59,8 @@ var App = function() {
         }
     };
 
-    // handle the layout reinitialization on window resize
     var handleOnResize = function() {
+        var windowWidth = $(window).width();
         var resize;
         if (isIE8) {
             var currheight;
@@ -78,12 +78,15 @@ var App = function() {
             });
         } else {
             $(window).resize(function() {
-                if (resize) {
-                    clearTimeout(resize);
+                if ($(window).width() != windowWidth) {
+                    windowWidth = $(window).width();
+                    if (resize) {
+                        clearTimeout(resize);
+                    }
+                    resize = setTimeout(function() {
+                        _runResizeHandlers();
+                    }, 50); // wait 50ms until window resize finishes.
                 }
-                resize = setTimeout(function() {
-                    _runResizeHandlers();
-                }, 50); // wait 50ms until window resize finishes.
             });
         }
     };
@@ -428,14 +431,6 @@ var App = function() {
         });
     };
 
-    // Handle Hower Dropdowns
-    var handleDropdownHover = function() {
-        $('[data-hover="dropdown"]').not('.hover-initialized').each(function() {
-            $(this).dropdownHover();
-            $(this).addClass('hover-initialized');
-        });
-    };
-
     // Handle textarea autosize 
     var handleTextareaAutosize = function() {
         if (typeof(autosize) == "function") {
@@ -618,7 +613,6 @@ var App = function() {
             //handleUniform(); // handles custom radio & checkboxes     
             handleiCheck(); // handles custom icheck radio and checkboxes
             handleBootstrapSwitch(); // handle bootstrap switch plugin
-            handleDropdownHover(); // handles dropdown hover       
             handleScrollers(); // handles slim scrolling contents 
             handleSelect2(); // handle custom Select2 dropdowns
             handleFancybox(); // handle fancy box
