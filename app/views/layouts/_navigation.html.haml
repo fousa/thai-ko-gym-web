@@ -29,5 +29,5 @@
         .container
           .hor-menu
             %ul.nav.navbar-nav
-              = menu_tag t('menu.items.members'), users_path, 'users'
-              = menu_tag t('menu.items.presences'), users_path, 'presences'
+              = menu_tag t('menu.items.members'),   users_path,     'users'     if can? :read, User
+              = menu_tag t('menu.items.presences'), presences_path, 'presences' if can? :read, Presence

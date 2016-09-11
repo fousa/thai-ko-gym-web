@@ -22,6 +22,9 @@ Rails.application.routes.draw do
     end
   end
 
+  ### Presences
+  resources :presences, only: [:index, :show]
+
   ### profile
   resource :profile, only: [:show, :edit, :update] do
     collection do
