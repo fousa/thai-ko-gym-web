@@ -5,6 +5,12 @@ module Api
 
     attr_reader :current_user
 
+    rescue_from CanCan::AccessDenied do
+      respond_to do |format|
+        format.json { render nothing: true, status: :forbidden }
+      end
+    end
+
     private
 
     def authenticate_request

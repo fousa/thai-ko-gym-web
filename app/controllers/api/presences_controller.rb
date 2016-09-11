@@ -1,5 +1,7 @@
 module Api
   class PresencesController < Api::ApplicationController
+    authorize_resource
+
     respond_to :json
 
     def create

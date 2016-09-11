@@ -11,6 +11,9 @@ describe User do
     it { should_not be_able_to(:active, User.new) }
     it { should_not be_able_to(:inactive, User.new) }
     it { should_not be_able_to(:manage, User.new) }
+
+    it { should_not be_able_to(:read, Presence.new) }
+    it { should_not be_able_to(:manage, Presence.new) }
   end
 
   context 'Teacher' do
@@ -22,6 +25,10 @@ describe User do
     it { should be_able_to(:active, User.new) }
     it { should be_able_to(:inactive, User.new) }
     it { should_not be_able_to(:manage, User.new) }
+
+    it { should be_able_to(:read, Presence.new) }
+    it { should be_able_to(:create, Presence.new) }
+    it { should_not be_able_to(:manage, Presence.new) }
   end
 
   context 'Administrator' do
@@ -33,5 +40,8 @@ describe User do
     it { should be_able_to(:active, User.new) }
     it { should be_able_to(:inactive, User.new) }
     it { should be_able_to(:manage, User.new) }
+
+    it { should be_able_to(:read, Presence.new) }
+    it { should be_able_to(:manage, Presence.new) }
   end
 end

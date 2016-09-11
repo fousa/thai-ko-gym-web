@@ -11,6 +11,7 @@ class Ability
     can :inactive, User
 
     can :read, Presence
+    can :create, Presence
 
     return if user.teacher?
     can :manage, User
