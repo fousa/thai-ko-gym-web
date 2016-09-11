@@ -20,6 +20,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
 
   %body.page-container-bg-solid
-    = render partial: 'layouts/navigation'
-    = render partial: 'layouts/content'
-    = render partial: 'layouts/footer'
+    .page-wrapper
+      = render partial: 'layouts/navigation'
+      = render partial: 'layouts/content'
+      = render partial: 'layouts/footer'
