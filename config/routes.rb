@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   ### Home
   authenticated :user do
     # Make sure we don't get the authentication message when we didn't login.
-    root 'home#index', as: :authenticated_root
+    root 'presences#index', as: :authenticated_root
   end
 
   ### users
