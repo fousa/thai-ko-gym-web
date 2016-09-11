@@ -10,7 +10,11 @@ class Ability
     can :active, User
     can :inactive, User
 
+    can :read, Presence
+    can :create, Presence
+
     return if user.teacher?
     can :manage, User
+    can :manage, Presence
   end
 end

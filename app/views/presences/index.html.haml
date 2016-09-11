@@ -1,0 +1,26 @@
+- content_for :title, t('pages.presences.list.title')
+
+.row
+  .col-md-12
+    .portlet.light.portlet-fit.calendar
+      .portlet-title
+        .caption.font-green
+          %i.fa.fa-list.font-green
+          = l(@current_month, format: :month).upcase
+        .actions
+          = icon_link_to presences_path(month: (@current_month.beginning_of_month - 1.month).strftime("%Y-%m-01")), 'long-arrow-left'
+          = icon_link_to presences_path(month: (@current_month.beginning_of_month + 1.month).strftime("%Y-%m-01")), 'long-arrow-right'
+      .portlet-body
+        #calendar.fc.fc-ltr.fc-unthemed
+          .fc-view-container
+            .fc-view.fc-month-view.fc-basic-view
+              = calendar_for @presences, first_day_of_week: 1, year: @current_month.year, month: @current_month.month, html: { class: "table table-bordered calendar" } do |calendar|
+                = calendar.head(t('date.abbr_day_names')[1], t('date.abbr_day_names')[2], t('date.abbr_day_names')[3], t('date.abbr_day_names')[4], t('date.abbr_day_names')[5], t('date.abbr_day_names')[6], t('date.abbr_day_names')[0])
+
+                = calendar.day(day_method: :present_at, class: 'fc-day fc-widget-content') do |date, presences|
+                  = date.day
+                  - if date.month == @current_month.month
+                    %a.fc-day-grid-event.fc-h-event.fc-event.fc-start.fc-end
+                      - if presences.count > 0
+                        .fc-content
+                          %span.fc-title= t('pages.presences.list.labels.presence', count: presences.count)

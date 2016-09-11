@@ -137,3 +137,11 @@ nl:
           age: 'Leeftijd'
           city: 'Woonplaats'
           active: 'Actief'
+
+    presences:
+      list:
+        title: 'Aanwezigheden'
+        labels:
+          presence:
+            one: '%{count} lid aanwezig'
+            other: '%{count} leden aanwezig'

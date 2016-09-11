@@ -15,4 +15,14 @@ describe Presence do
       expect(create(:presence).valid?).to be_truthy
     end
   end
+
+  context 'scopes' do
+    it 'should return the monthly presences' do
+      create(:presence, present_at: Date.parse('2016-09-20'))
+      create(:presence, present_at: Date.parse('2016-09-21'))
+      create(:presence, present_at: Date.parse('2016-10-20'))
+
+      expect(Presence.for_month(Date.parse('2016-09-20')).count).to eq(2)
+    end
+  end
 end

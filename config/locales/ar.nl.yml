@@ -89,6 +89,7 @@ nl:
       default: "%d/%m/%Y"
       long: "%e %B %Y"
       short: "%e %b"
+      month: "%B"
     month_names:
     -
     - januari
@@ -254,4 +255,5 @@ nl:
       default: "%a %d %b %Y %H:%M:%S %Z"
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
+      month: "%B %Y"
     pm: "'s middags"
