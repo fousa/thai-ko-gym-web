@@ -1,31 +1,33 @@
-.page-header
-  .page-header-top
-    .container
-      .page-logo
-        = link_to root_path do
-          = image_tag 'menu-logo.png', class: 'logo-default', height: 18
+.page-wrapper-row
+  .page-wrapper-top
+    .page-header
+      .page-header-top
+        .container
+          .page-logo
+            = link_to root_path do
+              = image_tag 'menu-logo.png', class: 'logo-default', height: 18
 
-      = link_to '', 'javascript:;', class: 'menu-toggler'
+          = link_to '', 'javascript:;', class: 'menu-toggler'
 
-      .top-menu
-        %ul.nav.navbar-nav.pull-right
-          %li.dropdown.dropdown-user.dropdown-dark
-            = link_to 'javascript:;', class: 'dropdown-toggle', data: { 'close-others' => true, hover: 'dropdown', toggle: 'dropdown' } do
-              = image_tag gravatar_image_url(current_user.email, size: 80), class: 'img-circle'
-              %span.username.username-hide-mobile= current_user.email
-            %ul.dropdown-menu.dropdown-menu-default
-              %li
-                = link_to profile_path do
-                  %i.icon-user
-                  = t 'menu.edit_profile'
-              %li
-                = link_to destroy_user_session_path, method: :delete do
-                  %i.icon-key
-                  = t 'menu.log_out'
+          .top-menu
+            %ul.nav.navbar-nav.pull-right
+              %li.dropdown.dropdown-user.dropdown-dark
+                = link_to 'javascript:;', class: 'dropdown-toggle', data: { 'close-others' => true, hover: 'dropdown', toggle: 'dropdown' } do
+                  = image_tag gravatar_image_url(current_user.email, size: 80), class: 'img-circle'
+                  %span.username.username-hide-mobile= current_user.email
+                %ul.dropdown-menu.dropdown-menu-default
+                  %li
+                    = link_to profile_path do
+                      %i.icon-user
+                      = t 'menu.edit_profile'
+                  %li
+                    = link_to destroy_user_session_path, method: :delete do
+                      %i.icon-key
+                      = t 'menu.log_out'
 
-  .page-header-menu
-    .container
-      .hor-menu
-        %ul.nav.navbar-nav
-          = menu_tag t('menu.items.members'), users_path, 'users'
-          = menu_tag t('menu.items.presences'), users_path, 'presences'
+      .page-header-menu
+        .container
+          .hor-menu
+            %ul.nav.navbar-nav
+              = menu_tag t('menu.items.members'), users_path, 'users'
+              = menu_tag t('menu.items.presences'), users_path, 'presences'
