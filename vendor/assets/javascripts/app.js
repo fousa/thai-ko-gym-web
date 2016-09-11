@@ -567,9 +567,9 @@ var App = function() {
             if(parent.attr('data-related')) {
                 $(parent.attr('data-related')).css('height', parent.height());
             }
-       });       
+       });
     }
-    
+
     //* END:CORE HANDLERS *//
 
     return {
@@ -580,13 +580,13 @@ var App = function() {
 
             //Core handlers
             handleInit(); // initialize core variables
-            handleOnResize(); // set and handle responsive    
+            handleOnResize(); // set and handle responsive
 
-            //UI Component handlers     
-            handleMaterialDesign(); // handle material design       
+            //UI Component handlers
+            handleMaterialDesign(); // handle material design
             handleiCheck(); // handles custom icheck radio and checkboxes
             handleBootstrapSwitch(); // handle bootstrap switch plugin
-            handleScrollers(); // handles slim scrolling contents 
+            handleScrollers(); // handles slim scrolling contents
             handleFancybox(); // handle fancy box
             handleSelect2(); // handle custom Select2 dropdowns
             handlePortletTools(); // handles portlet action bar functionality(refresh, configure, toggle, remove)
@@ -595,7 +595,7 @@ var App = function() {
             handleTabs(); // handle tabs
             handleTooltips(); // handle bootstrap tooltips
             handlePopovers(); // handles bootstrap popovers
-            handleAccordions(); //handles accordions 
+            handleAccordions(); //handles accordions
             handleModals(); // handle modals
             handleBootstrapConfirmation(); // handle bootstrap confirmations
             handleTextareaAutosize(); // handle autosize textareas
@@ -610,20 +610,20 @@ var App = function() {
 
         //main function to initiate core javascript after ajax complete
         initAjax: function() {
-            //handleUniform(); // handles custom radio & checkboxes     
+            //handleUniform(); // handles custom radio & checkboxes
             handleiCheck(); // handles custom icheck radio and checkboxes
             handleBootstrapSwitch(); // handle bootstrap switch plugin
-            handleScrollers(); // handles slim scrolling contents 
+            handleScrollers(); // handles slim scrolling contents
             handleSelect2(); // handle custom Select2 dropdowns
             handleFancybox(); // handle fancy box
             handleDropdowns(); // handle dropdowns
             handleTooltips(); // handle bootstrap tooltips
             handlePopovers(); // handles bootstrap popovers
-            handleAccordions(); //handles accordions 
+            handleAccordions(); //handles accordions
             handleBootstrapConfirmation(); // handle bootstrap confirmations
         },
 
-        //init main components 
+        //init main components
         initComponents: function() {
             this.initAjax();
         },
