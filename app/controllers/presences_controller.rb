@@ -12,7 +12,7 @@ class PresencesController < ApplicationController
   private
 
   def set_month
-    params[:month] = (Date.today.beginning_of_month).strftime("%Y-%m-01") if params[:month].nil?
+    params[:month] = Date.today.beginning_of_month.strftime('%Y-%m-01') if params[:month].nil?
 
     @current_month = Date.parse(params[:month]).beginning_of_day
   rescue
