@@ -7,7 +7,7 @@ module Api
 
     rescue_from CanCan::AccessDenied do
       respond_to do |format|
-        format.json { render nothing: true, status: :forbidden }
+        format.json { head :forbidden }
       end
     end
 
