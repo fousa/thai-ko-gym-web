@@ -138,6 +138,15 @@ nl:
           city: 'Woonplaats'
           active: 'Actief'
 
+    days:
+      list:
+        subtitle:
+          one: '%{count} lid aanwezig'
+          other: '%{count} leden aanwezig'
+        labels:
+          name: 'Naam'
+          registered_by: 'Geregistreerd door'
+
     presences:
       list:
         title: 'Aanwezigheden'

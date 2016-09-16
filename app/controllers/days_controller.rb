@@ -5,7 +5,7 @@ class DaysController < ApplicationController
   before_action :set_day, only: [:show]
 
   def show
-    @presences = Presence.for_day @current_day
+    @presences = Presence.includes(:user).for_day @current_day
   end
 
   private
