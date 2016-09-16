@@ -6,6 +6,12 @@ class DaysController < ApplicationController
 
   def show
     @presences = Presence.includes(:user).for_day @current_day
+    respond_to do |format|
+      format.html
+      format.xlsx do
+        response.headers['Content-Disposition'] = "attachment; filename=#{t("pages.days.export.filename", day: @current_day)}"
+      end
+    end
   end
 
   private

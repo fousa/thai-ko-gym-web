@@ -146,6 +146,8 @@ nl:
         labels:
           name: 'Naam'
           registered_by: 'Geregistreerd door'
+      export:
+        filename: 'Aanwezigheden-%{day}'
 
     presences:
       list:

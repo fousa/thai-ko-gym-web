@@ -1,0 +1,21 @@
+workbook = xlsx_package.workbook
+workbook.styles do |style|
+  highlight_cell = style.add_style(bg_color: "EFC376")
+
+  workbook.add_worksheet(name: l(@current_day, format: :long)) do |sheet|
+     sheet.add_row [
+       t('activerecord.attributes.user.name'),
+       t('activerecord.attributes.presence.registered_by'),
+      ], style: [
+        highlight_cell,
+        highlight_cell
+      ]
+
+    @presences.each do |presence|
+     sheet.add_row [
+       presence.user.name,
+       presence.registered_by.name
+      ]
+    end
+  end
+end
