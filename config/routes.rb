@@ -23,7 +23,11 @@ Rails.application.routes.draw do
   end
 
   ### Presences
-  resources :presences, only: [:index, :show]
+  resources :presences, only: :index do
+    collection do
+      resources :days, only: :show
+    end
+  end
 
   ### profile
   resource :profile, only: [:show, :edit, :update] do
