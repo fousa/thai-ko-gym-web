@@ -24,5 +24,13 @@ describe Presence do
 
       expect(Presence.for_month(Date.parse('2016-09-20')).count).to eq(2)
     end
+
+    it 'should return the daily presences' do
+      create(:presence, present_at: Date.parse('2016-09-20'))
+      create(:presence, present_at: Date.parse('2016-09-20'))
+      create(:presence, present_at: Date.parse('2016-10-20'))
+
+      expect(Presence.for_day(Date.parse('2016-09-20')).count).to eq(2)
+    end
   end
 end

@@ -1,0 +1,26 @@
+- content_for :title, l(@current_day, format: :long)
+- content_for :subtitle, t('pages.days.list.subtitle', count: @presences.count)
+- content_for :toolbar do
+  = back_tag presences_path(month: @current_day)
+
+.row.listing
+  .col-md-12
+    .portlet.light
+      .portlet-title
+        .caption.font-green
+          %i.fa.fa-list.font-green
+          = t 'pages.users.list.labels.overview'
+        .actions
+          = xls_tag url_for(only_path: true, action: action_name, format: :xlsx)
+      .portlet-body.day
+        .table-responsive
+          %table.table.table-striped.table-bordered.dataTable
+            %thead
+              %tr
+                %th= t('pages.days.list.labels.name')
+                %th= t('pages.days.list.labels.registered_by')
+            %tbody
+              - @presences.each do |presence|
+                %tr
+                  %td= presence.user.name
+                  %td= presence.registered_by.name

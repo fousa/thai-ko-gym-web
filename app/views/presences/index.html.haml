@@ -20,7 +20,7 @@
                 = calendar.day(day_method: :present_at, class: 'fc-day fc-widget-content') do |date, presences|
                   = date.day
                   - if date.month == @current_month.month
-                    %a.fc-day-grid-event.fc-h-event.fc-event.fc-start.fc-end
+                    = link_to day_path(date), class: 'fc-day-grid-event fc-h-event fc-event fc-start fc-end' do
                       - if presences.count > 0
                         .fc-content
                           %span.fc-title= t('pages.presences.list.labels.presence', count: presences.count)

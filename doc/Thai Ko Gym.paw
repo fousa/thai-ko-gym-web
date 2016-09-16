@@ -117,7 +117,7 @@
         <relationship name="variablesvalues" type="0/0" destination="LMENVIRONMENTVARIABLEVALUE" idrefs="z105"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z109">
-        <attribute name="value" type="string">Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MSwiZXhwIjoxNDczMTY2OTM3fQ.kSkGQo3xQsSGy6DoJxfqkMgRdPm_Hz7WixYqPcT5krc</attribute>
+        <attribute name="value" type="string">Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MSwiZXhwIjoxNDc0MTA2ODQ0fQ.oxekQ7AQF6L52fuF4t2eGsT5ydwYDHfTpyTkpL6rQ0o</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">Authorization</attribute>
         <attribute name="enabled" type="bool">1</attribute>
@@ -192,7 +192,7 @@
         <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z117"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z116">
-        <attribute name="value" type="string">Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MSwiZXhwIjoxNDczMTY2OTM3fQ.kSkGQo3xQsSGy6DoJxfqkMgRdPm_Hz7WixYqPcT5krc</attribute>
+        <attribute name="value" type="string">Token eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo3MSwiZXhwIjoxNDc0MTA2ODQ0fQ.oxekQ7AQF6L52fuF4t2eGsT5ydwYDHfTpyTkpL6rQ0o</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">Authorization</attribute>
         <attribute name="enabled" type="bool">1</attribute>

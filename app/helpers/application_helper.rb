@@ -88,8 +88,8 @@ module ApplicationHelper
 
   ### Menu
 
-  def menu_tag(title, path, active_controller)
-    active = active_controller == controller_name
+  def menu_tag(title, path, active_controllers)
+    active = active_controllers.include? controller_name
     content_tag :li, class: active ? 'active' : nil do
       link_to title, path
     end
