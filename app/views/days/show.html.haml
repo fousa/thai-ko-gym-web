@@ -12,7 +12,7 @@
           = t 'pages.users.list.labels.overview'
         .actions
           = xls_tag url_for(only_path: true, action: action_name, format: :xlsx)
-      .portlet-body
+      .portlet-body.day
         .table-responsive
           %table.table.table-striped.table-bordered.dataTable
             %thead

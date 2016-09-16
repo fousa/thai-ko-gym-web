@@ -9,7 +9,7 @@ class DaysController < ApplicationController
     respond_to do |format|
       format.html
       format.xlsx do
-        response.headers['Content-Disposition'] = "attachment; filename=#{t("pages.days.export.filename", day: @current_day)}"
+        response.headers['Content-Disposition'] = "attachment; filename=#{t('pages.days.export.filename', day: @current_day)}"
       end
     end
   end
