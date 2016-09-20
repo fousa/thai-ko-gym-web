@@ -1,4 +1,8 @@
 - content_for :title, t('pages.presences.list.title')
+- content_for :toolbar do
+  .btn-group
+    = previous_link_to presences_path(month: (@current_month.beginning_of_month - 1.month).strftime("%Y-%m-01")), @current_month - 1.month
+    = next_link_to presences_path(month: (@current_month.beginning_of_month + 1.month).strftime("%Y-%m-01")), @current_month + 1.month
 
 .row
   .col-md-12
@@ -8,8 +12,6 @@
           %i.fa.fa-list.font-green
           = l(@current_month, format: :month).upcase
         .actions
-          = icon_link_to presences_path(month: (@current_month.beginning_of_month - 1.month).strftime("%Y-%m-01")), 'long-arrow-left'
-          = icon_link_to presences_path(month: (@current_month.beginning_of_month + 1.month).strftime("%Y-%m-01")), 'long-arrow-right'
       .portlet-body
         #calendar.fc.fc-ltr.fc-unthemed
           .fc-view-container

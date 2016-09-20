@@ -259,4 +259,5 @@ nl:
       long: "%d %B %Y %H:%M"
       short: "%d %b %H:%M"
       month: "%B %Y"
+      short_month: "%b %Y"
     pm: "'s middags"
