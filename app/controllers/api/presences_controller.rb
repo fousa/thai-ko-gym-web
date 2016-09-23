@@ -8,7 +8,15 @@ module Api
       @presence = Presence.new(presence_params)
       @presence.registered_by = current_user
       @presence.save
-      respond_with @presence
+
+      # When the presence is a duplicate, just remove the errors and make sure the
+      # status code for accepted is returned.
+      if @presence.duplicate?
+        status = :accepted
+        @presence.errors.clear
+      end
+
+      respond_with @presence, status: status
     end
 
     private

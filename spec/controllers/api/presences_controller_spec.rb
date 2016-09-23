@@ -58,4 +58,21 @@ describe Api::PresencesController do
       expect(response).to have_http_status(:forbidden)
     end
   end
+
+  context 'Data' do
+    let(:user) { create(:user, role: :admin) }
+
+    it 'should not create a duplicate presence' do
+      token = JsonWebToken.encode user_id: user.id
+      add_token_authentication_header token
+
+      post :create, params: { presence: { user_id: @other_user.id, present_at: Date.today }, format: :json }
+      expect(response).to have_http_status(:success)
+      expect(json['presence']['registered_by']['id']).to eq(user.id)
+      expect(json['presence']['user']['id']).to eq(@other_user.id)
+
+      post :create, params: { presence: { user_id: @other_user.id, present_at: Date.today }, format: :json }
+      expect(response).to have_http_status(:accepted)
+    end
+  end
 end
