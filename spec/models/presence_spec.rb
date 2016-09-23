@@ -10,9 +10,21 @@ describe Presence do
     it { should validate_presence_of(:user) }
     it { should validate_presence_of(:present_at) }
     it { should validate_presence_of(:registered_by) }
+    it { should validate_uniqueness_of(:present_at).scoped_to(:user_id) }
 
     it 'should have a valid factory' do
       expect(create(:presence).valid?).to be_truthy
+    end
+
+    it 'should be a duplicate' do
+      user = create(:user)
+
+      first_presence = create(:presence, user: user, present_at: Date.parse('2016-09-20'))
+      expect(first_presence.duplicate?).to be_falsy
+
+      second_presence = build(:presence, user: user, present_at: Date.parse('2016-09-20'))
+      second_presence.valid?
+      expect(second_presence.duplicate?).to be_truthy
     end
   end
 

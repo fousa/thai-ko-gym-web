@@ -7,7 +7,7 @@ class Presence < ApplicationRecord
   ### Validations
 
   validates :user,          presence: true
-  validates :present_at,    presence: true
+  validates :present_at,    presence: true, uniqueness: { scope: :user_id }
   validates :registered_by, presence: true
 
   ### Scopes
@@ -19,4 +19,10 @@ class Presence < ApplicationRecord
   scope :for_day, lambda { |date|
     where('presences.present_at = ?', date)
   }
+
+  ### Errors
+
+  def duplicate?
+    errors.details[:present_at].map { |detail| detail[:error] }.include? :taken
+  end
 end
